@@ -80,15 +80,16 @@ osascript -l JavaScript tools/check.js
 Test: http://localhost:8000/login.html → Create account → you land on your profile. Run Balance the Books Easy
 test 1 and check the leaderboard.
 
-## 4. Deploy on Cloudflare Pages
+## 4. Deploy on Cloudflare (Workers with static assets)
 
 1. Push the repository to GitHub (private is fine).
-2. On https://dash.cloudflare.com: **Workers & Pages → Create → Pages → Connect to Git** and pick the repository.
-3. Build settings: Framework preset **None**, Build command `sh tools/build.sh`, Build output directory `dist`. Deploy.
-   `tools/build.sh` copies only the public site (HTML, css, js, fonts, `_headers`) into `dist/`; docs, SQL and tools are not published.
-4. Copy the `*.pages.dev` address (or add your own domain under **Custom domains**), then in Supabase set
-   **Authentication → URL Configuration → Site URL** to it and add it to the redirect URLs.
-5. Every push to the main branch deploys again automatically. Security headers are in `_headers`.
+2. On https://dash.cloudflare.com: **Workers & Pages → Create → Import a repository** and pick it. Leave the build command empty;
+   the deploy command is `npx wrangler deploy`.
+3. `wrangler.jsonc` publishes the folder as a static site. `.assetsignore` keeps `docs/`, `supabase/`, `tools/`, README, TODO and
+   palettes.html off the site. Security headers are in `_headers`.
+4. Copy the `*.workers.dev` address (or add your own domain under **Settings → Domains & Routes**), then in Supabase set
+   **Authentication → URL Configuration → Site URL** to it and add `https://…/**` to the redirect URLs.
+5. Every push to the main branch deploys again automatically.
 
 ## 5. Before you share the link
 

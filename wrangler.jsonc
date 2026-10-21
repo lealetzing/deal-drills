@@ -1,0 +1,11 @@
+// Cloudflare Workers (static assets). Publishes this folder as a static site; .assetsignore keeps
+// docs, SQL, tools and notes private. Security headers are in _headers.
+{
+  "name": "deal-drills",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": ".",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "none"
+  }
+}

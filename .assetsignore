@@ -1,0 +1,17 @@
+# Not published (Cloudflare static assets)
+.git
+.gitignore
+.assetsignore
+.claude
+.DS_Store
+.vercel
+.test-accounts.json
+.demo-accounts.json
+wrangler.jsonc
+docs
+supabase
+tools
+dist
+README.md
+TODO.md
+palettes.html
