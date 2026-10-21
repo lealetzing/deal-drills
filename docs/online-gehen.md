@@ -93,14 +93,13 @@ Als Host haftest du für fremde Beiträge erst, **wenn du davon weißt und nicht
    ```
    `.gitignore` hält Testpasswörter und lokale Einstellungen schon heraus. Im Code steht nur der öffentliche Supabase-Schlüssel (publishable key), das ist so vorgesehen.
 
-### D2 · Cloudflare Pages
+### D2 · Cloudflare
 1. dash.cloudflare.com → kostenloses Konto anlegen.
-2. **Workers & Pages → Create → Pages → Connect to Git** → GitHub verbinden → `deal-drills` auswählen.
-3. Einstellungen: Framework preset **None**, Build command `sh tools/build.sh`, Build output directory `dist` → **Save and Deploy**.
-   Das Skript veröffentlicht nur die Seite selbst; `docs/`, SQL-Dateien und Notizen bleiben privat.
-4. Du bekommst eine Adresse wie `deal-drills.pages.dev`. Teste dort Login, ein Spiel und den Tracker.
-5. Eigene Domain: im Projekt **Custom domains → Set up a domain**. Am einfachsten kaufst du die Domain direkt bei Cloudflare.
-6. Jede Änderung, die ich auf GitHub hochlade, geht automatisch online.
+2. **Workers & Pages → Create → Import a repository** → GitHub verbinden → `deal-drills` auswählen. Build command leer lassen, Deploy command `npx wrangler deploy`.
+3. `wrangler.jsonc` und `.assetsignore` im Projekt sorgen dafür, dass nur die Seite selbst veröffentlicht wird; `docs/`, SQL-Dateien und Notizen bleiben privat.
+4. Adresse: `deal-drills.lea-letzing.workers.dev`. Teste dort Login, ein Spiel und den Tracker.
+5. Eigene Domain: im Projekt **Settings → Domains & Routes → Add Domain**.
+6. Jede Änderung auf GitHub geht automatisch online.
 
 ### D3 · Supabase einstellen
 1. **Authentication → URL Configuration:** Site URL = deine Domain (z. B. `https://dealdrills.de`), dieselbe Domain bei Redirect URLs.
