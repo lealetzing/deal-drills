@@ -1,4 +1,4 @@
--- Neues Supabase-Projekt (Frankfurt): SQL Editor → New query → alles einfügen → Run. Einmal ausführen.
+-- Neues Supabase-Projekt (EU): SQL Editor → New query → alles einfügen → Run. Einmal ausführen.
 
 -- Deal Drills database schema for Supabase (Postgres 15+).
 -- Run the whole file once in Supabase → SQL Editor → New query → Run. It is safe to run again after changes:
