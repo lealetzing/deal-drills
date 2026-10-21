@@ -167,8 +167,8 @@ function renderHeader(){
   var wipOk=false;try{wipOk=localStorage.getItem('dd-wip-ok')==='1';}catch(e){}
   if(!wipOk){var w=document.createElement('div');w.className='wip';w.setAttribute('role','note');
     w.innerHTML='<div class="in"><span><b>'+L('Beta · work in progress.','Beta · noch im Aufbau.')+'</b> '+
-      L('Deal Drills is built by a student for interview practice, not by M&amp;A professionals. Content is checked with care but may contain mistakes, so there is no guarantee that it is correct and it is not professional advice. Found an error? Please tell us.',
-        'Deal Drills wird von einer Studentin für die Interviewvorbereitung gebaut, nicht von M&amp;A-Profis. Die Inhalte werden sorgfältig erstellt, können aber Fehler enthalten. Für ihre Richtigkeit gibt es daher keine Gewähr, und sie sind keine fachliche Beratung. Du hast einen Fehler gefunden? Sag uns gern Bescheid.')+
+      L('Deal Drills is built by students for interview practice, not by M&amp;A professionals. Content is checked with care but may contain mistakes, so there is no guarantee that it is correct and it is not professional advice. Found an error? Please tell us.',
+        'Deal Drills wird von Studierenden für die Interviewvorbereitung gebaut, nicht von M&amp;A-Profis. Die Inhalte werden sorgfältig erstellt, können aber Fehler enthalten. Für ihre Richtigkeit gibt es daher keine Gewähr, und sie sind keine fachliche Beratung. Du hast einen Fehler gefunden? Sag uns gern Bescheid.')+
       '</span><span class="wipbtns"><button class="btn small ghost" id="wipReport">'+L('Report an error','Fehler melden')+'</button><button class="btn small" id="wipOk">'+L('Got it','Verstanden')+'</button></span></div>';
     h.insertAdjacentElement('afterend',w);
     $('#wipOk').onclick=function(){try{localStorage.setItem('dd-wip-ok','1');}catch(e){}w.remove();};
