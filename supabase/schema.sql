@@ -10,7 +10,7 @@ create table if not exists public.profiles (
   id           uuid primary key references auth.users(id) on delete cascade,
   display_name text not null check (char_length(btrim(display_name)) between 2 and 30),
   university   text check (university is null or char_length(university) <= 80),
-  target_role  text check (target_role is null or target_role in ('corporate_ma','ib','pe','ts','other')),
+  target_role  text check (target_role is null or target_role in ('corporate_ma','ib','pe','pc','ts','other')),
   created_at   timestamptz not null default now(),
   updated_at   timestamptz not null default now()
 );

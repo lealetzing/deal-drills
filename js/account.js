@@ -1,6 +1,6 @@
 /* Sign-in page (login.html) and profile page (profile.html). English/German via L(). */
 var V=$('#view');
-var ROLES=[['corporate_ma','Corporate M&A'],['ib','Investment Banking'],['pe','Private Equity'],['ts','Transaction Services'],['other',L('Other','Sonstiges')]];
+var ROLES=[['corporate_ma','Corporate M&A'],['ib','Investment Banking'],['pe','Private Equity'],['pc','Private Credit'],['ts','Transaction Services'],['other',L('Other','Sonstiges')]];
 function baseUrl(){return location.origin+location.pathname.replace(/[^/]*$/,'');}
 function notConfigured(){
   V.innerHTML='<div class="form"><div class="eyebrow">'+L('Account','Konto')+'</div><h2 style="margin:8px 0 12px">'+L('Accounts are not switched on yet.','Konten sind noch nicht aktiviert.')+'</h2>'+
