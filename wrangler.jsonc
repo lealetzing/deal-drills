@@ -3,6 +3,13 @@
 {
   "name": "deal-drills",
   "compatibility_date": "2026-10-01",
+  // Only the custom domains (dealdrills.com, www) serve the site; no *.workers.dev address.
+  "workers_dev": false,
+  "preview_urls": false,
+  "routes": [
+    { "pattern": "dealdrills.com", "custom_domain": true },
+    { "pattern": "www.dealdrills.com", "custom_domain": true }
+  ],
   "assets": {
     "directory": ".",
     "html_handling": "auto-trailing-slash",
