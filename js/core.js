@@ -159,10 +159,20 @@ function renderHeader(){
   var page=document.body.getAttribute('data-page')||'';
   if(TITLES[page])document.title=page==='index'?'Deal Drills · '+TITLES[page]:TITLES[page]+' · Deal Drills';
   var h=document.createElement('header');h.className='bar';
-  h.innerHTML='<div class="in"><a class="logo" href="index.html"><i></i>Deal Drills</a>'+
+  h.innerHTML='<div class="in"><a class="logo" href="index.html"><i></i>Deal Drills<span class="beta">Beta</span></a>'+
     '<nav class="tabs" aria-label="Sections">'+NAV.map(function(n){return '<a href="'+n[0]+'.html"'+(n[0]===page||(page==='technicals'&&n[0]==='questions')?' aria-current="page"':'')+'>'+n[1]+'</a>';}).join('')+'</nav>'+
     '<div class="who"><span id="who" class="who"></span><button class="langbtn" id="langBtn" title="'+L('Auf Deutsch umschalten','Switch to English')+'">'+L('DE','EN')+'</button></div></div>';
   document.body.insertBefore(h,document.body.firstChild);
+  /* Work-in-progress notice: shown until dismissed (remembered per browser). */
+  var wipOk=false;try{wipOk=localStorage.getItem('dd-wip-ok')==='1';}catch(e){}
+  if(!wipOk){var w=document.createElement('div');w.className='wip';w.setAttribute('role','note');
+    w.innerHTML='<div class="in"><span><b>'+L('Beta · work in progress.','Beta · noch im Aufbau.')+'</b> '+
+      L('Deal Drills is built by a student for interview practice, not by M&amp;A professionals. Content is checked with care but may contain mistakes, so there is no guarantee that it is correct and it is not professional advice. Found an error? Please tell us.',
+        'Deal Drills wird von einer Studentin für die Interviewvorbereitung gebaut, nicht von M&amp;A-Profis. Die Inhalte werden sorgfältig erstellt, können aber Fehler enthalten. Für ihre Richtigkeit gibt es daher keine Gewähr, und sie sind keine fachliche Beratung. Du hast einen Fehler gefunden? Sag uns gern Bescheid.')+
+      '</span><span class="wipbtns"><button class="btn small ghost" id="wipReport">'+L('Report an error','Fehler melden')+'</button><button class="btn small" id="wipOk">'+L('Got it','Verstanden')+'</button></span></div>';
+    h.insertAdjacentElement('afterend',w);
+    $('#wipOk').onclick=function(){try{localStorage.setItem('dd-wip-ok','1');}catch(e){}w.remove();};
+    $('#wipReport').onclick=function(){openFeedback('bug');};}
   var ft=document.createElement('footer');ft.className='foot';
   ft.innerHTML=L('Deal Drills · M&amp;A interview practice. Numbers in drills are generated at random and companies are invented. ','Deal Drills · Vorbereitung auf M&amp;A-Interviews. Zahlen in den Übungen sind zufällig erzeugt, Unternehmen erfunden. ')+
     '<a href="formulas.html">'+L('Formula sheet','Formelsammlung')+'</a> · <a href="partners.html">Partner</a> · <a href="about.html">'+L('About &amp; privacy','Über uns &amp; Datenschutz')+'</a>';
