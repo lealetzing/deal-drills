@@ -6,7 +6,7 @@ var OWNER={
   street:'Auf der Trat 4',
   city:'82393 Iffeldorf',
   country:'Deutschland',
-  mail:'[E-Mail-Adresse]'
+  mail:'dealdrills@gmail.com'
 };
 var UPDATED='20.10.2026';
 var MAIL='<a href="mailto:'+OWNER.mail+'">'+OWNER.mail+'</a>';
