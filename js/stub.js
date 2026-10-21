@@ -1,0 +1,2 @@
+/* Placeholder for sections still being built. */
+$('#view').innerHTML='<div class="eyebrow">'+L('Coming next','Kommt als Nächstes')+'</div><h2 style="margin:8px 0 12px">'+esc(TITLES[document.body.getAttribute('data-page')]||document.title.split(' · ')[0])+'</h2><p class="lead">'+L('This section is part of the next build step.','Dieser Bereich kommt im nächsten Schritt.')+'</p><a class="btn" href="games.html?g=ledger">'+L('Play Balance the Books meanwhile','Spiel solange Balance the Books')+'</a>';

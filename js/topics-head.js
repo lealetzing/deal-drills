@@ -1,0 +1,4 @@
+/* Topics page heading (the Deal Map content below is static HTML, mostly English with German terms). */
+$('#dmhead').innerHTML='<div class="eyebrow">'+L('Topics','Themen')+'</div><h2 style="margin:8px 0 6px">M&amp;A Deal Map</h2>'+
+ '<p class="lead" style="margin-top:0">'+L('Twelve modules, one running example (Muster AG), and a code on every cross-reference so you can see how the topics feed each other. German terms are marked.','Zwölf Module, ein durchgehendes Beispiel (Muster AG) und ein Code an jedem Querverweis, damit du siehst, wie die Themen zusammenhängen. Deutsche Fachbegriffe sind markiert.')+'</p>'+
+ (LANG==='de'?'<p class="notice" style="margin:0 0 6px">Die Module sind auf Englisch mit deutschen Fachbegriffen und deutschen Standardantworten, so wie in Interviews oft gemischt wird.</p>':'');

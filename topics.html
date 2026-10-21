@@ -1,0 +1,902 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f6f5f1">
+<title>Topics · Deal Drills</title>
+<meta name="description" content="The M&amp;A Deal Map: twelve modules from accounting to takeover law with one running example, calculators, drill questions and a German glossary.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body data-page="topics">
+<main class="wrap" id="view"><div id="dmhead"></div><nav class="dmnav" aria-label="Modules"><a href="#map">Map</a><a href="#m1">M1 Acct</a><a href="#m2">M2 EV</a><a href="#m3">M3 Multiples</a><a href="#m4">M4 DCF</a><a href="#m5">M5 Why</a><a href="#m6">M6 Merger</a><a href="#m7">M7 Payment</a><a href="#m8">M8 Process</a><a href="#m9">M9 Law</a><a href="#m10">M10 LBO</a><a href="#m11">M11 Market</a><a href="#m12">M12 Fit</a><a href="#drill">Drill</a><a href="#glossar">Glossar</a></nav><div class="dm">
+<section id="map" style="border-top:none">
+  <div class="mhead"><h2>How everything connects</h2></div>
+  <p class="idea">Every M&amp;A question is one of three questions. Learn the modules in this order and each one uses numbers from the one before.</p>
+  <div class="lane"><div class="q">1 · What is the company worth?</div>
+    <a class="node" href="#m1"><b>M1</b>Three statements</a><span class="arr">→ FCF →</span>
+    <a class="node" href="#m4"><b>M4</b>DCF &amp; WACC</a><span class="arr">→ EV →</span>
+    <a class="node" href="#m2"><b>M2</b>EV ↔ equity bridge</a><span class="arr">← EV ←</span>
+    <a class="node" href="#m3"><b>M3</b>Multiples</a></div>
+  <div class="lane"><div class="q">2 · Should we buy it, and how do we pay?</div>
+    <a class="node" href="#m5"><b>M5</b>Why deals happen</a><span class="arr">→ synergies →</span>
+    <a class="node" href="#m6"><b>M6</b>Merger model</a><span class="arr">→ currency →</span>
+    <a class="node" href="#m7"><b>M7</b>Cash, stock, collars</a><span class="arr">or</span>
+    <a class="node" href="#m10"><b>M10</b>LBO &amp; debt</a></div>
+  <div class="lane"><div class="q">3 · How does it actually get done?</div>
+    <a class="node" href="#m8"><b>M8</b>Process, DD, SPA</a><span class="arr">→ limits →</span>
+    <a class="node" href="#m9"><b>M9</b>Takeover law DE / US</a><span class="arr">→ today →</span>
+    <a class="node" href="#m11"><b>M11</b>Market &amp; live deals</a><span class="arr">→ you →</span>
+    <a class="node" href="#m12"><b>M12</b>Fit &amp; case day</a></div>
+
+  <h3>One concept, many places</h3>
+  <p>These are the threads interviewers pull. If you can follow each one across modules, you understand the subject instead of reciting it.</p>
+  <div class="tw"><table>
+    <tr><th>Thread</th><th>Where it shows up</th></tr>
+    <tr><td><b>Net debt</b> <span class="de">Nettoverschuldung</span></td><td><a class="x" href="#m2">M2</a> bridge from EV to equity · <a class="x" href="#m8">M8</a> “cash-free / debt-free” purchase price · <a class="x" href="#m10">M10</a> leverage multiple Net Debt/EBITDA · <a class="x" href="#m4">M4</a> weights in WACC</td></tr>
+    <tr><td><b>EBITDA</b></td><td><a class="x" href="#m1">M1</a> EBIT + D&amp;A · <a class="x" href="#m3">M3</a> EV/EBITDA · <a class="x" href="#m8">M8</a> adjusted in the quality-of-earnings review · <a class="x" href="#m10">M10</a> debt capacity and covenants</td></tr>
+    <tr><td><b>Tax shield</b></td><td><a class="x" href="#m1">M1</a> depreciation question · <a class="x" href="#m4">M4</a> (1 − t) in WACC · <a class="x" href="#m6">M6</a> after-tax cost of deal debt · <a class="x" href="#m10">M10</a> why LBOs use debt</td></tr>
+    <tr><td><b>Dilution</b> <span class="de">Verwässerung</span></td><td><a class="x" href="#m2">M2</a> treasury stock method · <a class="x" href="#m6">M6</a> new shares in a stock deal · <a class="x" href="#m7">M7</a> collars and CVRs are warrants · <a class="x" href="#m9">M9</a> the poison pill works by diluting the bidder</td></tr>
+    <tr><td><b>Control premium</b> <span class="de">Kontrollprämie</span></td><td><a class="x" href="#m3">M3</a> why precedents beat trading comps · <a class="x" href="#m5">M5</a> targets gain about 25% · <a class="x" href="#m6">M6</a> premium vs. synergies · <a class="x" href="#m9">M9</a> 3-month VWAP floor in Germany</td></tr>
+    <tr><td><b>Goodwill</b> <span class="de">Geschäfts- oder Firmenwert</span></td><td><a class="x" href="#m1">M1</a> not amortised, impairment-tested · <a class="x" href="#m6">M6</a> created in the purchase price allocation · <a class="x" href="#m10">M10</a> appears on the LBO opening balance sheet</td></tr>
+    <tr><td><b>Options thinking</b></td><td><a class="x" href="#m7">M7</a> collar, CVR and earnout are option portfolios · <a class="x" href="#m10">M10</a> carried interest is a call · <a class="x" href="#m4">M4</a> real options when a DCF fails</td></tr>
+    <tr><td><b>Agency problem</b> <span class="de">Prinzipal-Agent-Problem</span></td><td><a class="x" href="#m5">M5</a> empire building, why acquirers overpay · <a class="x" href="#m9">M9</a> defences protect managers or shareholders? · <a class="x" href="#m10">M10</a> debt and equity stakes discipline management</td></tr>
+  </table></div>
+
+  <h3>The running example: Muster AG</h3>
+  <p>An invented teaching example. Every module below reuses these numbers, so one set of figures takes you from the income statement to the offer price to the buyer's earnings per share.</p>
+  <div class="tw"><table>
+    <tr><th>Muster AG (target), €m</th><th class="num">Value</th><th>Used in</th></tr>
+    <tr><td>Revenue · EBITDA · EBIT · Net income</td><td class="num">500 · 120 · 100 · 67.5</td><td><a class="x" href="#m1">M1</a> <a class="x" href="#m3">M3</a></td></tr>
+    <tr><td>D&amp;A · CapEx · increase in NWC · tax rate</td><td class="num">20 · 30 · 10 · 25%</td><td><a class="x" href="#m4">M4</a></td></tr>
+    <tr><td>Debt · cash · net debt</td><td class="num">140 · 72.5 · 67.5</td><td><a class="x" href="#m2">M2</a> <a class="x" href="#m10">M10</a></td></tr>
+    <tr><td>Shares 45m · share price €16.00 · EPS €1.50</td><td class="num">Market cap 720</td><td><a class="x" href="#m2">M2</a> <a class="x" href="#m6">M6</a></td></tr>
+    <tr><td>Offer €20.00 per share (25% premium)</td><td class="num">Equity 900 · EV 967.5</td><td><a class="x" href="#m6">M6</a> <a class="x" href="#m7">M7</a></td></tr>
+    <tr><td>Buyer “Käufer SE”: net income 300, 100m shares, price €45</td><td class="num">EPS €3.00 · P/E 15×</td><td><a class="x" href="#m6">M6</a></td></tr>
+  </table></div>
+</section>
+
+<section id="m1">
+  <div class="mhead"><span class="code">M1</span><h2>Accounting and the three statements</h2></div>
+  <p class="idea">Profit is an opinion, cash is a fact. The three statements are one system: net income links them, and every change must keep the balance sheet balanced.</p>
+  <div class="grid3">
+    <div class="card"><h4>Income statement · <span class="de">GuV</span></h4>
+      <p class="mono">Revenue 500<br>− COGS, SG&amp;A, R&amp;D<br>= EBITDA 120<br>− D&amp;A 20<br>= EBIT 100<br>− Interest 10<br>= EBT 90<br>− Tax 25% 22.5<br>= <b>Net income 67.5</b></p></div>
+    <div class="card"><h4>Cash flow statement · <span class="de">Kapitalflussrechnung</span></h4>
+      <p class="mono"><b>Net income 67.5</b><br>+ D&amp;A 20<br>− Increase in NWC 10<br>= CFO 77.5<br>− CapEx 30 (CFI)<br>− Debt repaid 10<br>+ Equity issued 5<br>− Dividends 20 (CFF −25)<br>= <b>Change in cash +22.5</b></p></div>
+    <div class="card"><h4>Balance sheet · <span class="de">Bilanz</span></h4>
+      <p class="mono">Cash 50 → <b>72.5</b><br>PP&amp;E 200 → 210 (+30 −20)<br>NWC 70 → 80<br>Debt 150 → 140<br>Retained earnings<br>70 → 117.5 (<b>+67.5</b> −20)<br>Assets = Liabilities + Equity</p></div>
+  </div>
+  <p>Read it as a loop: net income is the last line of the income statement, the first line of the cash flow statement, and (minus dividends) the change in retained earnings. The bottom of the cash flow statement is the cash line on the balance sheet.</p>
+
+  <h3>Standardantwort auf Deutsch: „Führen Sie mich durch die drei Abschlüsse“</h3>
+  <p>About 60 seconds spoken. Say what each statement shows, then the links in the order of the cash flow statement, then close the loop.</p>
+  <div class="grid3">
+    <div class="card"><h4>1 · Was jeder Abschluss zeigt</h4><ul>
+      <li>Die <b>GuV</b> zeigt Erträge und Aufwendungen einer Periode, vom Umsatz bis zum Jahresüberschuss.</li>
+      <li>Die <b>Bilanz</b> zeigt an einem Stichtag das Vermögen (Aktiva) und dessen Finanzierung durch Eigen- und Fremdkapital (Passiva). Beide Seiten sind immer gleich groß.</li>
+      <li>Die <b>Kapitalflussrechnung</b> zeigt die tatsächlichen Zahlungsströme: operativ, Investition, Finanzierung.</li></ul></div>
+    <div class="card"><h4>2 · Wie sie zusammenhängen</h4><ul>
+      <li><b>Jahresüberschuss:</b> letzte Zeile der GuV, erste Zeile der Kapitalflussrechnung; erhöht abzüglich Dividenden die Gewinnrücklagen.</li>
+      <li><b>Abschreibungen:</b> mindern das Ergebnis, werden im operativen Cashflow wieder addiert, senken das Anlagevermögen.</li>
+      <li><b>Working Capital:</b> Forderungen, Vorräte, Verbindlichkeiten aus L+L stehen in der Bilanz; ihre Veränderung läuft durch den operativen Cashflow. Ein Aufbau bindet Cash.</li>
+      <li><b>CapEx:</b> nicht in der GuV, sondern im Investitions-Cashflow; erhöht das Anlagevermögen.</li>
+      <li><b>Finanzierung:</b> Kredite, Tilgung, Kapitalerhöhung, Dividenden stehen im Finanzierungs-Cashflow und verändern Finanzschulden bzw. Eigenkapital.</li></ul></div>
+    <div class="card"><h4>3 · Der Kreis schließt sich</h4>
+      <p>Die Summe der drei Cashflows ist die Veränderung der liquiden Mittel. Anfangsbestand plus Veränderung ergibt den Endbestand, und der ist die Position Kasse in der Bilanz.</p>
+      <p><b>Merkhilfe:</b> Jahresüberschuss → Abschreibungen → Working Capital → CapEx → Finanzierung → Kasse. Das ist die Kapitalflussrechnung von oben nach unten.</p></div>
+  </div>
+
+  <h3>The walk-through method</h3>
+  <p>Any “what happens when…” question follows four steps: income statement (pre-tax, then after tax), cash flow statement (start at net income, add back non-cash items), balance sheet assets, balance sheet liabilities and equity. Then check that it balances.</p>
+  <div class="tw"><table>
+    <tr><th>Event (tax 25%)</th><th>Income statement</th><th>Cash flow</th><th>Balance sheet</th></tr>
+    <tr><td>Depreciation +10</td><td>Net income −7.5</td><td>−7.5 + 10 = <b>cash +2.5</b></td><td>PP&amp;E −10, cash +2.5 = assets −7.5; retained earnings −7.5</td></tr>
+    <tr><td>Buy inventory 10 for cash</td><td>Nothing</td><td>CFO −10</td><td>Inventory +10, cash −10 (<span class="de">Aktivtausch</span>)</td></tr>
+    <tr><td>Raise debt 100</td><td>Nothing today; interest later</td><td>CFF +100</td><td>Cash +100, debt +100 (<span class="de">Bilanzverlängerung</span>)</td></tr>
+    <tr><td>Goodwill impairment 20</td><td>Net income −15</td><td>−15 + 20 = cash +5 if tax-deductible</td><td>Goodwill −20, cash +5; equity −15</td></tr>
+    <tr><td>Form a provision of 8 <span class="de">Rückstellung</span></td><td>Net income −6</td><td>Non-cash; add back</td><td>Provision +8, equity −6, tax effect 2</td></tr>
+    <tr><td>Share buyback 50</td><td>Nothing; EPS rises on fewer shares</td><td>CFF −50</td><td>Cash −50, equity −50</td></tr>
+  </table></div>
+  <div class="trap"><p><b>Trap.</b> A profitable company can go bankrupt. Growth ties up cash in receivables and inventory, CapEx never touches the income statement, and debt repayments are not expenses. Always ask where the cash is.</p></div>
+
+  <h3>German accounting words that change the answer</h3>
+  <div class="grid2">
+    <div class="card"><h4>Three kinds of effect</h4><ul>
+      <li><span class="de">erfolgswirksam</span> hits the income statement</li>
+      <li><span class="de">bilanzwirksam</span> moves the balance sheet</li>
+      <li><span class="de">zahlungswirksam</span> moves cash</li></ul>
+      <p>Depreciation is the first two but not the third. Buying a machine for cash is the last two but not the first.</p></div>
+    <div class="card"><h4>Liabilities are not all debt</h4><ul>
+      <li><span class="de">Verbindlichkeiten aus L+L</span> trade payables: working capital</li>
+      <li><span class="de">Rückstellungen</span> provisions: operating ones are working capital</li>
+      <li><span class="de">Pensionsrückstellungen</span> pension provisions: debt-like, go in the bridge <a class="x" href="#m2">M2</a></li>
+      <li><span class="de">Finanzverbindlichkeiten</span> financial debt</li></ul></div>
+  </div>
+  <p>Under German <span class="de">HGB</span>, goodwill is amortised (usually over 10 years if no life can be estimated) and prudence dominates (<span class="de">Vorsichtsprinzip</span>, <span class="de">Niederstwertprinzip</span>). Under IFRS and US GAAP, goodwill is only impairment-tested. Listed German groups report under IFRS; family companies often report under HGB, so ask which one you are reading.</p>
+  <div class="links">Feeds: <a class="x" href="#m4">M4</a> NOPAT and free cash flow · <a class="x" href="#m2">M2</a> which liabilities count as debt · <a class="x" href="#m8">M8</a> quality of earnings in due diligence · <a class="x" href="#m6">M6</a> combining two income statements</div>
+</section>
+
+<section id="m2">
+  <div class="mhead"><span class="code">M2</span><h2>Enterprise value and the equity bridge</h2></div>
+  <p class="idea">Enterprise value is the price of the business itself, whoever finances it. Equity value is what is left for shareholders after everyone with a prior claim is paid.</p>
+  <figure>
+    <svg viewBox="0 0 640 178" role="img" aria-label="Bridge at the offer price: equity 900 plus debt 140 minus cash 72.5 equals enterprise value 967.5">
+      <line class="ax" x1="120" y1="8" x2="120" y2="170"/>
+      <text x="112" y="37" text-anchor="end">Equity (offer)</text><rect class="b1" x="120" y="20" width="392.7" height="26"/><text class="t-num" x="518" y="37">900</text>
+      <text x="112" y="75" text-anchor="end">+ Debt</text><rect class="b2" x="512.7" y="58" width="61.1" height="26"/><text class="t-num" x="580" y="75">+140</text>
+      <text x="112" y="113" text-anchor="end">− Cash</text><rect class="b-neg" x="542.2" y="96" width="31.6" height="26"/><text class="t-num" x="580" y="113">−72.5</text>
+      <text x="112" y="151" text-anchor="end">= Enterprise value</text><rect class="b1" x="120" y="134" width="422.2" height="26"/><text class="t-num" x="548" y="151">967.5 = 8.1× EBITDA</text>
+    </svg>
+    <figcaption>Muster AG at the €20 offer, drawn to scale. Going the other way, from a DCF: EV − net debt = equity, then divide by diluted shares for a price per share.</figcaption>
+  </figure>
+  <div class="f">EV = Equity value + financial debt + pension deficit + lease liabilities + minorities + preferred − cash − non-operating financial assets
+<span class="de">Gesamtunternehmenswert = Eigenkapitalwert + Nettofinanzverbindlichkeiten (+ schuldähnliche Posten)</span></div>
+  <div class="grid2">
+    <div class="card"><h4>Why each item is there</h4><ul>
+      <li><b>Debt, pensions, leases:</b> a buyer inherits or refinances them.</li>
+      <li><b>Minorities</b> <span class="de">Minderheitenanteile</span>: EBITDA includes 100% of a subsidiary you own only partly, so the claim of the other owners must be added.</li>
+      <li><b>Cash:</b> non-operating, and the buyer gets it, so it reduces the net price.</li>
+      <li><b>Test:</b> does it bear interest or sit in financing? Then it is debt. Does it move with daily business? Then it is working capital.</li></ul></div>
+    <div class="card"><h4>Matching rule for multiples</h4><ul>
+      <li>Metric before interest (revenue, EBITDA, EBIT) pairs with <b>EV</b>.</li>
+      <li>Metric after interest (net income, EPS) pairs with <b>equity value</b>.</li>
+      <li>EV/net income mixes the two and is wrong.</li>
+      <li>EV does not change when a company swaps cash for debt repayment or raises debt and holds the cash. Equity value also stays put; only the mix moves.</li></ul></div>
+  </div>
+  <h3>Diluted shares: treasury stock method</h3>
+  <div class="ex"><p><b>Example</b>: 100 shares at $10, 10 options with a $10 strike. The options are at the money, so exercise proceeds of $100 buy back all 10 new shares. Net dilution zero, diluted equity value $1,000.</p>
+  <p>Change the strike to $5: proceeds $50 buy back 5 shares, net 5 new shares, diluted equity value 105 × $10 = $1,050.</p></div>
+  <p>Only in-the-money options count. Convertibles: if in the money, treat as shares and remove from debt; if not, leave as debt. Never do both.</p>
+  <div class="trap"><p><b>Trap.</b> “A company with EV of 1,000 takes on 500 of debt. What is EV?” Still 1,000 if the cash stays on the balance sheet: debt +500, cash +500. EV changes only when the operating business changes.</p></div>
+  <div class="links">Feeds: <a class="x" href="#m3">M3</a> numerator of EV multiples · <a class="x" href="#m4">M4</a> last step of a DCF · <a class="x" href="#m8">M8</a> the purchase price mechanism is this bridge written into a contract · <a class="x" href="#m10">M10</a> sources and uses</div>
+</section>
+
+<section id="m3">
+  <div class="mhead"><span class="code">M3</span><h2>Multiples: trading comps and precedent transactions</h2></div>
+  <p class="idea">A multiple is a compressed DCF. It says what the market pays today for one euro of earnings in a business with similar growth, risk and returns.</p>
+  <div class="grid2">
+    <div class="card"><h4>Trading comps · <span class="de">Börsenmultiplikatoren</span></h4>
+      <ol><li>Pick 5 to 10 listed peers: same sector, size, growth, margin, geography.</li><li>Build EV for each with the bridge <a class="x" href="#m2">M2</a>.</li><li>Clean the metric: remove one-offs, align year-ends, use next-twelve-months figures.</li><li>Take the median, not the mean; drop negative multiples.</li><li>Apply to the target. Result is a minority, liquid value with no premium.</li></ol></div>
+    <div class="card"><h4>Precedents · <span class="de">Transaktionsmultiplikatoren</span></h4>
+      <ol><li>Find deals for similar targets in the last 3 to 5 years.</li><li>Use the price paid, so the multiple includes a control premium and part of the synergies.</li><li>Usually based on last-twelve-months numbers.</li><li>Check the context: boom or crisis, auction or bilateral, cash or stock.</li><li>Few data points and stale markets are the weakness.</li></ol></div>
+  </div>
+  <figure>
+    <svg viewBox="0 0 640 214" role="img" aria-label="Football field for Muster AG in euros per share">
+      <g class="t-soft"><text class="t-num" x="207.5" y="204" text-anchor="middle">€12</text><text class="t-num" x="322.5" y="204" text-anchor="middle">€16</text><text class="t-num" x="437.5" y="204" text-anchor="middle">€20</text><text class="t-num" x="552.5" y="204" text-anchor="middle">€24</text></g>
+      <line class="ax" x1="207.5" y1="14" x2="207.5" y2="188"/><line class="ax" x1="552.5" y1="14" x2="552.5" y2="188"/>
+      <text x="140" y="35" text-anchor="end">52-week range</text><rect class="b2" x="221.9" y="22" width="143.7" height="20"/>
+      <text x="140" y="67" text-anchor="end">Trading comps 6.5–7.5×</text><rect class="b1" x="316.8" y="54" width="77.6" height="20"/>
+      <text x="140" y="99" text-anchor="end">LBO at 17–20% IRR</text><rect class="b1" x="336.9" y="86" width="71.9" height="20"/>
+      <text x="140" y="131" text-anchor="end">DCF, WACC 7.5–8.5%</text><rect class="b1" x="365.6" y="118" width="115" height="20"/>
+      <text x="140" y="163" text-anchor="end">Precedents 8–9×</text><rect class="b1" x="431.8" y="150" width="77.6" height="20"/>
+      <line class="mark" x1="322.5" y1="10" x2="322.5" y2="188"/><text class="t-num" x="318" y="12" text-anchor="end">price €16</text>
+      <line class="mark2" x1="437.5" y1="10" x2="437.5" y2="188"/><text class="t-num" x="442" y="12">offer €20</text>
+    </svg>
+    <figcaption>Football field for Muster AG. Each bar is a method; the board wants to see the offer sit inside or above most of them. Precedents are highest because they contain the control premium. The LBO bar is a floor: what a financial buyer could pay and still earn its target return <a class="x" href="#m10">M10</a>.</figcaption>
+  </figure>
+  <h3>Which method is used most?</h3>
+  <div class="tw"><table>
+    <tr><th>Method</th><th>How common</th><th>Role in practice</th></tr>
+    <tr><td>Trading comps</td><td>Used in every valuation, every day</td><td>Fast and market-based. The first sanity check and the language of negotiations (“we are at 8× EBITDA”).</td></tr>
+    <tr><td>Precedent transactions</td><td>Standard in any M&amp;A context</td><td>Shows what buyers actually paid for control. Often decides the offer range when good recent deals exist.</td></tr>
+    <tr><td>DCF</td><td>Always built, rarely the deciding number</td><td>The only method based on the company's own cash flows. Required for fairness opinions and German statutory valuations, and the tool for pricing synergies. Very sensitive to assumptions.</td></tr>
+    <tr><td>LBO analysis</td><td>Whenever a financial sponsor could bid</td><td>Sets the floor: what a fund can pay for its target return <a class="x" href="#m10">M10</a>.</td></tr>
+    <tr><td>Others</td><td>Case by case</td><td>Sum of the parts for conglomerates, premiums analysis for listed targets, liquidation value in distress, net asset value for real estate.</td></tr>
+  </table></div>
+  <p>Interview answer: “I would use all three and show them in a football field. Multiples carry most weight in practice because they are market-observable; the DCF is the cross-check on fundamentals and the place where I value synergies.” Within DCF, the WACC method is by far the most common. <a class="x" href="#m4">M4</a>.</p>
+  <h3>Running a multiple valuation, step by step</h3>
+  <div class="f">1. Peers trade at a median of 7.0× EV/EBITDA
+2. Muster AG EBITDA 120  →  EV = 7.0 × 120 = 840
+3. − net debt 67.5      →  equity value 772.5
+4. ÷ 45m shares         →  about €17.20 per share   (no control premium yet)</div>
+
+  <div class="tw"><table>
+    <tr><th>Multiple</th><th>Use when</th><th>Watch out</th></tr>
+    <tr><td>EV / EBITDA</td><td>Default. Ignores capital structure and depreciation policy.</td><td>Ignores CapEx; flatters asset-heavy firms. IFRS 16 lifts EBITDA of lessees.</td></tr>
+    <tr><td>EV / EBIT</td><td>Capital intensity differs across peers.</td><td>Distorted by amortisation of acquired intangibles.</td></tr>
+    <tr><td>EV / Sales</td><td>Loss-making or early-stage companies.</td><td>Says nothing about margins.</td></tr>
+    <tr><td>P / E <span class="de">KGV</span></td><td>Banks, insurers, quick market talk.</td><td>Moves with leverage and tax.</td></tr>
+    <tr><td>P / B</td><td>Banks, real estate.</td><td>Meaningless for asset-light firms.</td></tr>
+  </table></div>
+  <p>What drives a high multiple? Higher growth, higher return on capital, lower risk. Formally, EV/EBIT ≈ (1 − t)(1 − g/ROIC) ÷ (WACC − g), which is the terminal value formula from <a class="x" href="#m4">M4</a> divided by EBIT.</p>
+  <div class="links">Feeds: <a class="x" href="#m4">M4</a> exit multiple in terminal value · <a class="x" href="#m6">M6</a> the offer multiple · <a class="x" href="#m10">M10</a> entry and exit multiple · <a class="x" href="#m11">M11</a> quoting what was paid in a live deal</div>
+</section>
+
+<section id="m4">
+  <div class="mhead"><span class="code">M4</span><h2>DCF and cost of capital</h2></div>
+  <p class="idea">A company is worth the cash it will hand to its investors, discounted at the return those investors demand. Everything else is detail.</p>
+  <div class="steps">
+    <div><b>Forecast</b>5 to 10 years of free cash flow</div>
+    <div><b>Discount rate</b>WACC from CAPM and peer betas</div>
+    <div><b>Terminal value</b>Growth or exit multiple</div>
+    <div><b>Discount</b>Sum of present values = EV</div>
+    <div><b>Bridge</b>EV − net debt = equity <a class="x" href="#m2">M2</a></div>
+    <div><b>Stress</b>Sensitivity on WACC and g</div>
+  </div>
+  <div class="f">Unlevered FCF = EBIT × (1 − t) + D&amp;A − CapEx − increase in NWC
+Muster AG:    = 100 × 0.75  +  20  −  30   −  10             = <b>55</b>
+
+Cost of equity (CAPM) = risk-free + beta × market risk premium = 2.5% + 1.15 × 5.5% = 8.8%
+WACC = E/V × cost of equity + D/V × cost of debt × (1 − t)   = 84% × 8.8% + 16% × 5% × 0.75 ≈ <b>8.0%</b>
+
+Terminal value (Gordon growth) = FCF next year ÷ (WACC − g)
+Simple check: 55 × 1.02 ÷ (8% − 2%) = <b>EV 935</b> → − net debt 67.5 = equity 867.5 → ÷ 45m = <b>€19.28</b></div>
+  <p>The market says €16, the DCF says €19.28, the offer is €20. That gap is the conversation in <a class="x" href="#m6">M6</a>: the buyer pays above standalone value and needs synergies to justify it.</p>
+  <div class="grid2">
+    <div class="card"><h4>WACC inputs you must be able to defend</h4><ul>
+      <li><b>Risk-free</b> <span class="de">Basiszins</span>: long government bond in the cash-flow currency.</li>
+      <li><b>Beta:</b> unlever peer betas, take the median, relever at the target's structure. β<sub>L</sub> = β<sub>U</sub> × (1 + (1 − t) × D/E).</li>
+      <li><b>Market risk premium</b> <span class="de">Marktrisikoprämie</span>: roughly 5 to 7%.</li>
+      <li><b>Weights:</b> market values and target structure, not book.</li>
+      <li>Debt is cheaper than equity because it ranks first and interest is tax-deductible. Past some point, distress costs push WACC back up.</li></ul></div>
+    <div class="card"><h4>Terminal value sanity checks</h4><ul>
+      <li>Often 60 to 80% of EV. Say so before the interviewer does.</li>
+      <li>g must stay below long-run nominal GDP growth, about 1 to 2.5%.</li>
+      <li>Growth costs money: reinvestment rate = g ÷ ROIC. If ROIC equals WACC, growth adds no value.</li>
+      <li>Cross-check: back out the exit multiple implied by your g, and the g implied by your multiple.</li>
+      <li>Mid-year convention raises value slightly because cash arrives through the year.</li></ul></div>
+  </div>
+  <div class="tw"><table>
+    <tr><th>Variant</th><th>Cash flow</th><th>Discount rate</th><th>Gives</th><th>Use for</th></tr>
+    <tr><td>WACC / entity <span class="de">Bruttoverfahren</span></td><td>Unlevered FCF</td><td>WACC</td><td>EV</td><td>Stable leverage. The default.</td></tr>
+    <tr><td>Flow to equity <span class="de">Nettoverfahren</span></td><td>FCF after interest and debt flows</td><td>Cost of equity</td><td>Equity directly</td><td>Banks, insurers</td></tr>
+    <tr><td>APV</td><td>Unlevered FCF, plus tax shields valued separately</td><td>Unlevered cost of equity</td><td>EV</td><td>Changing leverage, LBOs <a class="x" href="#m10">M10</a></td></tr>
+    <tr><td><span class="de">Ertragswertverfahren</span> (IDW S1)</td><td>Earnings distributable to owners</td><td>Cost of equity</td><td>Equity</td><td>German statutory valuations, squeeze-outs <a class="x" href="#m9">M9</a></td></tr>
+  </table></div>
+  <h3>Landkarte auf Deutsch: WACC von unten nach oben</h3>
+  <p>Wo fängt man an, was ist Asset Beta, und wo kommt die Verschuldung ins Spiel? In der Reihenfolge, in der du rechnest. Zahlen aus einem Beispiel.</p>
+  <div class="f"><b>WACC 8,37 %</b>
+├─ Eigenkapital, 60 % Gewicht      × Cost of Equity 11,6 %
+│    Cost of Equity = Risk-Free + Beta × MRP = 3,0 % + 1,56 × 5,5 %
+│    Beta × MRP = Company Risk Premium      = 8,6 %
+└─ Fremdkapital, 40 % Gewicht      × Cost of Debt nach Steuern 3,5 %
+     Cost of Debt = Risk-Free + Debt Premium = 3,0 % + 1,9 % = 4,9 %
+     nach Steuern: × (1 − 28 %)              = 3,5 %
+
+WACC = E/(D+E) × CoE + D/(D+E) × CoD × (1 − t)</div>
+  <div class="grid3">
+    <div class="card"><h4>Risk-Free Rate</h4><p>Rendite einer sicheren Staatsanleihe (10 oder 20 Jahre). Startpunkt für Eigen- und Fremdkapital.</p></div>
+    <div class="card"><h4>Market Risk Premium (MRP)</h4><p>Zusatzrendite für das Risiko des ganzen Aktienmarkts. Meist 5 bis 6 %.</p></div>
+    <div class="card"><h4>Beta</h4><p>Wie stark die Aktie auf Marktschwankungen reagiert. 1,0 = wie der Markt, 1,56 = 56 % stärker.</p></div>
+    <div class="card"><h4>Company Risk Premium</h4><p>Beta × MRP. Der Aufschlag für das Risiko genau dieser Firma.</p></div>
+    <div class="card"><h4>Debt Premium</h4><p>Aufschlag der Gläubiger auf die Risk-Free Rate für das Ausfallrisiko.</p></div>
+    <div class="card"><h4>Tax Shield</h4><p>Zinsen mindern die Steuer, deshalb zählt die Cost of Debt nur nach Steuern: × (1 − t).</p></div>
+  </div>
+  <div class="tw"><table>
+    <tr><th>Begriff</th><th>Bedeutet</th><th>Enthält Schulden?</th></tr>
+    <tr><td><b>Asset Beta</b> = Unlevered Beta</td><td>Reines Geschäftsrisiko, als hätte die Firma keine Schulden</td><td>Nein</td></tr>
+    <tr><td><b>Equity Beta</b> = Levered Beta</td><td>Geschäftsrisiko plus Risiko durch Verschuldung</td><td>Ja</td></tr>
+  </table></div>
+  <p>Mehr Schulden heißen mehr Risiko für die Eigentümer, weil Zinsen zuerst bezahlt werden. Deshalb ist das Equity Beta größer als das Asset Beta, solange es Schulden gibt.</p>
+  <div class="f">Levered   = Unlevered × (1 + (1 − t) × D/E)
+Unlevered = Levered ÷ (1 + (1 − t) × D/E)</div>
+  <div class="steps">
+    <div><b>Comps suchen</b>Betas der Peers (z. B. Bloomberg). Unterschiedlich verschuldet, also nicht vergleichbar.</div>
+    <div><b>Un-levern</b>Verschuldung jeder Comp rausrechnen → Asset Beta.</div>
+    <div><b>Median</b>Median der Asset Betas = Geschäftsrisiko der Branche.</div>
+    <div><b>Re-levern</b>Mit der Kapitalstruktur der Zielfirma hochrechnen → Beta für die Cost of Equity.</div>
+  </div>
+  <div class="trap"><p><b>Merke.</b> Un-levern trennt Geschäftsrisiko vom Finanzierungsrisiko, damit der Vergleich fair ist. Re-levern setzt das Finanzierungsrisiko der Zielfirma wieder drauf.</p></div>
+
+  <div class="card">
+    <h4>WACC-Rechner · Starteinstellung Beispiel</h4>
+    <div class="calc wcalc">
+      <label>Risk-Free Rate <span class="val" id="w-vrf"></span><input id="w-rf" type="range" min="0" max="6" step="0.1" value="3.0"></label>
+      <label>Market Risk Premium <span class="val" id="w-vmrp"></span><input id="w-mrp" type="range" min="3" max="8" step="0.1" value="5.5"></label>
+      <label>Asset Beta (unlevered) <span class="val" id="w-vbu"></span><input id="w-bu" type="range" min="0.3" max="2" step="0.01" value="1.05"></label>
+      <label>Fremdkapital-Anteil D/(D+E) <span class="val" id="w-vdw"></span><input id="w-dw" type="range" min="0" max="80" step="1" value="40"></label>
+      <label>Debt Premium <span class="val" id="w-vdp"></span><input id="w-dp" type="range" min="0.5" max="8" step="0.1" value="1.9"></label>
+      <label>Steuersatz <span class="val" id="w-vt"></span><input id="w-t" type="range" min="0" max="40" step="1" value="28"></label>
+    </div>
+    <div class="out">
+      <div><b id="w-obl"></b><span>Levered Beta</span></div>
+      <div><b id="w-ocrp"></b><span>Company Risk Premium</span></div>
+      <div><b id="w-oce"></b><span>Cost of Equity</span></div>
+      <div><b id="w-ocd"></b><span>Cost of Debt nach Steuern</span></div>
+      <div><b id="w-ow" style="color:var(--accent)"></b><span>WACC</span></div>
+    </div>
+    <p style="margin-top:12px"><button id="w-reset" type="button" class="wbtn">Zurück zum Beispiel</button></p>
+    <p class="small">Probier: Fremdkapital-Anteil hoch → Levered Beta und Cost of Equity steigen, der WACC sinkt trotzdem, weil billige Schulden mehr Gewicht bekommen. Dann den Debt Premium hochdrehen und schauen, wann der Vorteil kippt.</p>
+  </div>
+  <details class="q"><summary>Warum ist Fremdkapital billiger als Eigenkapital?</summary><p>Der Gläubiger trägt weniger Risiko: Er wird vor den Eigentümern bedient, hat feste Zinsen und Sicherheiten. Und Zinsen sind steuerlich absetzbar, die Cost of Debt wird mit (1 − t) multipliziert.</p></details>
+  <details class="q"><summary>Warum nicht einfach nur Schulden nehmen?</summary><p>Mehr Schulden erhöhen das Risiko für Eigentümer (Beta und Cost of Equity steigen) und für Gläubiger (Debt Premium steigt) und bringen Insolvenzrisiko. Ab einem Punkt überwiegen diese Kosten den Tax Shield.</p></details>
+  <details class="q"><summary>Was ändert sich, wenn die Zielfirma mehr Schulden aufnimmt?</summary><p>Das Asset Beta bleibt gleich, weil sich das Geschäft nicht ändert. Levered Beta und Cost of Equity steigen. Das Gewicht der billigeren Schulden im WACC steigt ebenfalls.</p></details>
+  <details class="q"><summary>Ist Cost of Debt oder Cost of Equity höher?</summary><p>Cost of Equity, fast immer. Im Beispiel: 11,6 % gegen 4,9 % vor bzw. 3,5 % nach Steuern.</p></details>
+
+  <h3>The DCF in full: Muster AG year by year</h3>
+  <p>How to build the forecast: revenue from volume × price or market × share; margins from cost structure; D&amp;A and CapEx as a share of sales; working capital from days of sales. The last forecast year must be a “normal” year: CapEx at least equal to D&amp;A, margins sustainable, working capital growing with sales.</p>
+  <div class="tw"><table>
+    <tr><th>€m</th><th class="num">Y1</th><th class="num">Y2</th><th class="num">Y3</th><th class="num">Y4</th><th class="num">Y5</th><th class="num">Terminal</th></tr>
+    <tr><td>Free cash flow (grows 2%)</td><td class="num">56.1</td><td class="num">57.2</td><td class="num">58.4</td><td class="num">59.5</td><td class="num">60.7</td><td class="num">60.7 × 1.02 ÷ 6% = 1,032</td></tr>
+    <tr><td>Discount factor at 8%</td><td class="num">0.926</td><td class="num">0.857</td><td class="num">0.794</td><td class="num">0.735</td><td class="num">0.681</td><td class="num">0.681</td></tr>
+    <tr><td>Present value</td><td class="num">51.9</td><td class="num">49.1</td><td class="num">46.3</td><td class="num">43.8</td><td class="num">41.3</td><td class="num">702.6</td></tr>
+  </table></div>
+  <p>Sum of the five years 232.4 + terminal value 702.6 = <b>EV 935</b>. The terminal value is 75% of the total. Then the bridge: 935 − 67.5 = 867.5 equity, or €19.28 per share.</p>
+
+  <h3>Three routes, one answer: WACC, flow to equity, APV</h3>
+  <p>A stripped-down company so the arithmetic is visible: EBIT 100 forever, tax 25%, no growth, CapEx equals D&amp;A. It carries permanent debt of 300 at 5% interest. Investors would require 10% if it had no debt (unlevered cost of equity).</p>
+  <div class="grid3">
+    <div class="card"><h4>1 · WACC (entity) method</h4>
+      <p class="mono">FCF = 100 × 0.75 = 75<br>WACC = 9.09%<br>EV = 75 ÷ 9.09% = 825<br>− debt 300<br>= <b>equity 525</b></p>
+      <p>Cash flow before financing, discounted at a rate that already contains the tax shield. Needs the bridge.</p></div>
+    <div class="card"><h4>2 · Flow to equity <span class="de">Nettoverfahren</span></h4>
+      <p class="mono">EBIT 100 − interest 15 = 85<br>− tax 25% = net income 63.75<br>= flow to equity 63.75<br>cost of equity = 12.14%<br>63.75 ÷ 12.14% = <b>equity 525</b></p>
+      <p>Cash flow after interest and debt movements, discounted at the levered cost of equity. Gives equity directly, no bridge.</p></div>
+    <div class="card"><h4>3 · APV (adjusted present value)</h4>
+      <p class="mono">Unlevered value = 75 ÷ 10% = 750<br>+ tax shield = 25% × 300 = 75<br>= EV 825<br>− debt 300<br>= <b>equity 525</b></p>
+      <p>Value the business as if debt-free, then add the value of the interest tax savings as a separate block.</p></div>
+  </div>
+  <div class="f">How the rates connect:
+Levered cost of equity = 10% + (10% − 5%) × (1 − 25%) × 300 ÷ 525 = 12.14%      more debt → riskier equity → higher required return
+WACC = 525/825 × 12.14% + 300/825 × 5% × 0.75 = 9.09%                         below 10% only because of the tax shield</div>
+  <div class="grid2">
+    <div class="card"><h4>Flow to equity: the recipe</h4><ol>
+      <li>Start from net income (after interest and actual taxes).</li>
+      <li>+ D&amp;A − CapEx − increase in working capital.</li>
+      <li><b>+ new borrowing − debt repayments.</b> This line is what people forget.</li>
+      <li>Discount at the cost of equity, never at WACC.</li>
+      <li>Result is equity value. Do not subtract net debt again.</li></ol>
+      <p>Use for banks and insurers, where debt is part of operations, and when a fixed debt schedule is known. The dividend discount model is the same idea using dividends.</p></div>
+    <div class="card"><h4>APV: the recipe</h4><ol>
+      <li>Unlevered free cash flow, the same as in the WACC method.</li>
+      <li>Discount at the unlevered cost of equity → value without debt.</li>
+      <li>For each year: interest × tax rate = tax shield. Discount it (at the cost of debt if the debt plan is fixed) and add.</li>
+      <li>Optionally subtract expected distress costs.</li>
+      <li>Then the normal bridge to equity.</li></ol>
+      <p>Use when leverage changes every year, as in an LBO: WACC would need a new rate each year, APV keeps one rate and shows the financing benefit on its own line.</p></div>
+  </div>
+  <p><b>The classic mistake:</b> mixing cash flow and rate. Unlevered cash flow goes with WACC (or the unlevered rate in APV); cash flow to equity goes with the cost of equity. And the tax shield may be counted once only: in the WACC, or as an APV block, or in net income.</p>
+
+  <div class="trap"><p><b>Trap.</b> “WACC goes up; what happens?” Value falls. “Debt goes up; what happens to WACC?” First down (cheap, tax-shielded debt replaces equity), then up (default risk raises both costs). And a DCF does not work for banks or pre-revenue companies: use dividend discount or real options instead.</p></div>
+  <div class="ex"><p><b>Case tip.</b> A typical 90-minute Excel case asks you to build exactly this structure from condensed financials. State your assumptions aloud as you make them; that is what is graded.</p></div>
+  <div class="links">Needs: <a class="x" href="#m1">M1</a> statements · Feeds: <a class="x" href="#m2">M2</a> bridge · <a class="x" href="#m3">M3</a> multiples as a check · <a class="x" href="#m6">M6</a> standalone value plus synergies = maximum price</div>
+</section>
+
+<section id="m5">
+  <div class="mhead"><span class="code">M5</span><h2>Why deals happen, and who wins</h2></div>
+  <p class="idea">A deal creates value only if the two companies are worth more together than apart: V(A+B) &gt; V(A) + V(B). The premium then decides how that gain is split.</p>
+  <div class="grid2">
+    <div class="card"><h4>Good reasons</h4><ul>
+      <li><b>Synergies</b>: cost (overlap, purchasing, plants) and revenue (cross-selling). Cost synergies are believed, revenue synergies are discounted.</li>
+      <li><b>Better management</b>: the market for corporate control replaces weak teams.</li>
+      <li><b>Relief of financial constraints</b>: a cash-rich buyer funds a constrained target.</li>
+      <li><b>Technology, talent, market entry</b>: faster than building.</li>
+      <li><b>Tax</b>: losses, step-ups.</li></ul></div>
+    <div class="card"><h4>Doubtful reasons</h4><ul>
+      <li><b>Diversification</b>: shareholders can diversify themselves for free.</li>
+      <li><b>EPS accretion alone</b>: arithmetic, not value <a class="x" href="#m6">M6</a>.</li>
+      <li><b>Empire building and hubris</b>: managers gain from size.</li>
+      <li><b>Market power</b>: good for shareholders, bad for customers, and regulators block it <a class="x" href="#m9">M9</a>.</li>
+      <li><b>Fashion</b>: buying because rivals are buying.</li></ul></div>
+  </div>
+  <p><b>Types:</b> horizontal (competitor), vertical (supplier or customer), conglomerate (unrelated). <b>Waves</b> start with change: deregulation, new technology such as AI, cheap financing, shocks, high valuations.</p>
+  <h3>What the evidence says</h3>
+  <div class="tw"><table>
+    <tr><th>Finding</th><th>Number</th><th>Why it matters</th></tr>
+    <tr><td>Target share price at announcement</td><td class="num">about +25%</td><td>Targets capture most of the gain.</td></tr>
+    <tr><td>Bidder share price</td><td class="num">slightly down in stock deals, flat or up in cash</td><td>Paying in stock signals the buyer thinks its shares are expensive <a class="x" href="#m7">M7</a>.</td></tr>
+    <tr><td>Combined value</td><td class="num">positive</td><td>On average deals do create value; buyers just pay it away.</td></tr>
+    <tr><td>Deals not completed</td><td class="num">about 20%</td><td>Hence merger arbitrage and termination fees <a class="x" href="#m7">M7</a>.</td></tr>
+    <tr><td>Buying a private target</td><td class="num">bidders gain 1–2% more</td><td>Stronger bargaining position; the buyer provides liquidity.</td></tr>
+    <tr><td>Bidding contests</td><td class="num">winner worse off</td><td>Winner's curse. Comcast paid £17.28 for Sky after opening at £10.75.</td></tr>
+  </table></div>
+  <p><b>Typical target:</b> smaller, slow sales growth, low leverage, low market-to-book, in an industry already consolidating. <b>After the deal:</b> operating margins improve on average, and acquirers sell or close about 46% of target plants within three years.</p>
+  <div class="ex"><p><b>Muster AG.</b> Cost synergies of 30 a year before tax are 22.5 after tax; capitalised at 8% they are worth about 281. The premium is 180 (900 − 720).</p>
+  <div class="split"><div style="width:64%;background:var(--accent)">Target shareholders 180</div><div style="width:36%;background:var(--ok)">Buyer 101</div></div>
+  <p>Buyer's gain = synergies − premium = 101. If synergies come in at half, the buyer has destroyed value even though the deal “worked”.</p></div>
+  <div class="trap"><p><b>Why deals fail:</b> overpaying, overestimated synergies, slow or clumsy integration, culture, loss of key people, and weak due diligence. Have one example ready, such as Bayer–Monsanto (litigation risk underestimated) or Daimler–Chrysler (culture).</p></div>
+  <div class="links">Feeds: <a class="x" href="#m6">M6</a> synergies in the model · <a class="x" href="#m9">M9</a> market power and antitrust · <a class="x" href="#m12">M12</a> “would you do this deal?”</div>
+</section>
+
+<section id="m6">
+  <div class="mhead"><span class="code">M6</span><h2>The merger model and accretion / dilution</h2></div>
+  <p class="idea">Put the two income statements together, pay for the target, and ask one question: is the buyer's earnings per share higher or lower afterwards?</p>
+  <div class="steps">
+    <div><b>Price</b>Offer per share, premium, equity and EV</div>
+    <div><b>Financing</b>Cash, debt, new shares</div>
+    <div><b>Combine</b>Add net incomes</div>
+    <div><b>Adjust</b>Synergies, new interest, lost interest on cash, extra amortisation, all after tax</div>
+    <div><b>Share count</b>Buyer shares + new shares</div>
+    <div><b>Compare</b>Pro forma EPS vs. standalone EPS</div>
+  </div>
+
+  <h3>Landkarte auf Deutsch: Wozu ein Merger Model?</h3>
+  <p>Es beantwortet eine Frage: <b>Steigt oder sinkt der Gewinn pro Aktie (EPS) des Käufers durch die Übernahme?</b> Steigt er, ist der Deal <span class="de">accretive</span>; sinkt er, <span class="de">dilutive</span>.</p>
+  <div class="grid3">
+    <div class="card"><h4>1 · Beide Firmen projizieren</h4><p>Income Statements von Käufer und Target, oft 3 bis 5 Jahre.</p></div>
+    <div class="card"><h4>2 · Kaufpreis und Finanzierung</h4><p>Meist Aktienkurs des Targets plus Prämie <span class="de">Übernahmeprämie</span>. Dazu der Mix: wie viel Cash, Schulden, neue Aktien.</p></div>
+    <div class="card"><h4>3 · Synergien annehmen</h4><p>Kosteneinsparungen oder Mehrumsätze durch den Zusammenschluss <a class="x" href="#m5">M5</a>.</p></div>
+    <div class="card"><h4>4 · Income Statements kombinieren</h4><p>Gewinne addieren, dann die Finanzierung einrechnen:</p><ul>
+      <li><b>Cash:</b> entgangene Zinsen auf das ausgegebene Cash</li>
+      <li><b>Schulden:</b> zusätzliche Zinsen</li>
+      <li><b>Aktien:</b> zusätzliche Aktien im Nenner</li>
+      <li><b>Write-ups:</b> Abschreibung auf aufgewertete Assets</li></ul></div>
+    <div class="card"><h4>5 · Pro-forma-EPS</h4><p>Kombinierter Nettogewinn ÷ kombinierte Aktienzahl.</p></div>
+    <div class="card"><h4>6 · Vergleichen</h4><p>Pro-forma-EPS gegen EPS des Käufers ohne Deal. Höher = accretive, niedriger = dilutive.</p></div>
+  </div>
+  <p>Nebenher entstehen in der Bilanz Goodwill und immaterielle Werte (siehe Kaufpreisallokation unten). Für „accretive oder dilutive“ reicht aber meist das Income Statement.</p>
+  <div class="ex"><p><b>Kurzfassung fürs Interview.</b> „Ein Merger Model zeigt, ob eine Übernahme für den Käufer EPS-accretive oder dilutive ist. Ich projiziere beide Firmen, lege Kaufpreis und Finanzierung fest, berücksichtige Synergien, kombiniere die Gewinne und passe sie um Zinsen, neue Aktien und Abschreibungen an. Dann vergleiche ich das Pro-forma-EPS mit dem EPS des Käufers ohne Deal.“</p></div>
+  <details class="q"><summary>Kontrollfrage: Welche drei Dinge verändern durch die Finanzierung den Gewinn oder die Aktienzahl des Käufers?</summary><p>Cash → entgangene Zinserträge (Gewinn sinkt). Schulden → neue Zinsaufwendungen (Gewinn sinkt). Aktien → mehr Aktien im Nenner (EPS sinkt). Alles nach Steuern.</p></details>
+
+  <h3>The shortcut: compare yields</h3>
+  <p>The target's earnings yield at the offer price is 67.5 ÷ 900 = <b>7.5%</b> (the inverse of the 13.3× P/E paid). The deal is accretive when that yield beats the after-tax cost of whatever the buyer pays with.</p>
+  <div class="tw"><table>
+    <tr><th>Currency</th><th>After-tax cost</th><th>vs. 7.5%</th><th>Pro forma EPS (standalone €3.00)</th></tr>
+    <tr><td>Cash on hand, earning 3%</td><td class="num">2.25%</td><td>Accretive</td><td class="num">(300 + 67.5 − 20.25) ÷ 100 = €3.47</td></tr>
+    <tr><td>New debt at 6%</td><td class="num">4.5%</td><td>Accretive</td><td class="num">(300 + 67.5 − 40.5) ÷ 100 = €3.27</td></tr>
+    <tr><td>Buyer shares at 15× P/E</td><td class="num">1 ÷ 15 = 6.7%</td><td>Accretive</td><td class="num">367.5 ÷ 120 = €3.06</td></tr>
+  </table></div>
+  <p>So the usual ranking is cash cheapest, then debt, then stock. In an all-stock deal the rule collapses to: <b>buyer P/E above the P/E paid for the target means accretive</b>. Use the P/E at the offer price, not the target's trading P/E.</p>
+
+  <div class="card">
+    <h4>Accretion / dilution calculator · prefilled with Muster AG</h4>
+    <div class="calc">
+      <label>Buyer net income<input id="c-bni" type="number" value="300" step="any"></label>
+      <label>Buyer shares (m)<input id="c-bsh" type="number" value="100" step="any"></label>
+      <label>Buyer share price<input id="c-bp" type="number" value="45" step="any"></label>
+      <label>Target net income<input id="c-tni" type="number" value="67.5" step="any"></label>
+      <label>Equity purchase price<input id="c-pp" type="number" value="900" step="any"></label>
+      <label>% paid in stock<input id="c-st" type="number" value="50" min="0" max="100" step="any"></label>
+      <label>Interest on debt/cash %<input id="c-r" type="number" value="6" step="any"></label>
+      <label>Tax rate %<input id="c-t" type="number" value="25" step="any"></label>
+      <label>Pre-tax synergies<input id="c-syn" type="number" value="0" step="any"></label>
+    </div>
+    <div class="out" id="c-out" aria-live="polite"></div>
+  </div>
+
+  <h3>The full list of adjustments in a merger model</h3>
+  <div class="tw"><table>
+    <tr><th>Adjustment</th><th>Effect on combined net income</th><th>Muster AG, 50% stock and 50% debt</th></tr>
+    <tr><td>Target's net income</td><td>Added</td><td class="num">+67.5</td></tr>
+    <tr><td>Interest on new deal debt, after tax</td><td>Subtracted</td><td class="num">450 × 6% × 0.75 = −20.25</td></tr>
+    <tr><td>Interest lost on cash used, after tax</td><td>Subtracted</td><td class="num">0 (no cash used)</td></tr>
+    <tr><td>Synergies, after tax, phased in over 2–3 years</td><td>Added</td><td class="num">0 in the base case</td></tr>
+    <tr><td>Amortisation of written-up intangibles, after tax</td><td>Subtracted (non-cash)</td><td class="num">ignored here</td></tr>
+    <tr><td>One-off deal and integration costs</td><td>Subtracted in year one, usually shown separately</td><td class="num">ignored here</td></tr>
+    <tr><td>New shares issued</td><td>Raises the share count</td><td class="num">450 ÷ 45 = 10m</td></tr>
+  </table></div>
+  <div class="f">Pro forma net income = 300 + 67.5 − 20.25 = 347.25
+Pro forma shares     = 100 + 10 = 110m
+Pro forma EPS        = €3.16 vs. €3.00 standalone  →  <b>5.2% accretive</b>
+Blended cost of funds = 50% × 6.7% (stock) + 50% × 4.5% (debt) = 5.6%  &lt;  target yield 7.5%  ✓</div>
+  <p>A real model also combines the balance sheets: add the target's assets and liabilities at fair value, remove its equity, add goodwill, the new debt and the new shares. Then check what the deal does to leverage (net debt/EBITDA) and the credit rating.</p>
+  <div class="grid2">
+    <div class="card"><h4>What a buyer looks at besides EPS</h4><ul>
+      <li><b>Value:</b> synergies minus premium <a class="x" href="#m5">M5</a>.</li>
+      <li><b>Return:</b> does return on invested capital exceed WACC within about three years?</li>
+      <li><b>Balance sheet:</b> leverage after the deal, rating, covenant headroom.</li>
+      <li><b>Ownership:</b> how much of the combined company goes to the target's holders.</li>
+      <li><b>Break-even synergies:</b> how much must go right for zero dilution.</li></ul></div>
+    <div class="card"><h4>Interview examples</h4><ul>
+      <li>“Buyer P/E 10×, seller P/E 8×, all stock?” Accretive: 10 is above 8.</li>
+      <li>“Now the buyer pays a 30% premium.” Paid P/E is 8 × 1.3 = 10.4×, above 10, so slightly dilutive.</li>
+      <li>“All debt at 8%, tax 25%, target bought at 20× earnings?” Cost 6% vs. yield 5%: dilutive.</li>
+      <li>“What must be true for a stock deal to be accretive?” Buyer's P/E above the P/E paid, or synergies large enough to close the gap.</li></ul></div>
+  </div>
+
+  <h3>Purchase price allocation · <span class="de">Kaufpreisallokation</span></h3>
+  <div class="f">Purchase price for equity                         900
+− Book value of target equity                     −222.5
+− Write-up of assets to fair value (brands, tech)  −100
++ Deferred tax liability on write-up (25%)         +25
+= <b>Goodwill</b>                                        602.5</div>
+  <p>Old goodwill of the target is wiped out, its equity is eliminated, written-up intangibles are amortised (which lowers reported EPS but not cash), and goodwill sits on the balance sheet until an impairment <a class="x" href="#m1">M1</a>.</p>
+  <div class="grid2">
+    <div class="card"><h4>Other outputs to know</h4><ul>
+      <li><b>Exchange ratio</b> <span class="de">Umtauschverhältnis</span>: €20 ÷ €45 = 0.444 buyer shares per target share.</li>
+      <li><b>Ownership:</b> 20m new ÷ 120m total = 16.7% for target holders.</li>
+      <li><b>Contribution analysis:</b> target brings 18% of combined net income for 16.7% of shares.</li>
+      <li><b>Break-even synergies:</b> the synergies needed for zero dilution.</li></ul></div>
+    <div class="card"><h4>Share deal or asset deal</h4><ul>
+      <li><b>Share deal:</b> buy the legal entity with all liabilities. Simple transfer; seller usually prefers it for tax.</li>
+      <li><b>Asset deal:</b> pick assets and liabilities. Buyer gets a tax step-up and leaves risks behind; contracts and staff must be transferred one by one (in Germany, employees move under <span class="de">§ 613a BGB</span>).</li></ul></div>
+  </div>
+  <div class="trap"><p><b>Trap.</b> Accretive does not mean good. A high-P/E buyer can raise its EPS by buying any low-P/E company, even while overpaying. Value comes from synergies exceeding the premium <a class="x" href="#m5">M5</a>. Say this unprompted.</p></div>
+  <div class="links">Needs: <a class="x" href="#m2">M2</a> price and share count · <a class="x" href="#m5">M5</a> synergies · Feeds: <a class="x" href="#m7">M7</a> choice of currency · <a class="x" href="#m10">M10</a> how much debt the deal can carry</div>
+</section>
+
+<section id="m7">
+  <div class="mhead"><span class="code">M7</span><h2>How to pay: cash, stock and contingent payments</h2></div>
+  <p class="idea">The currency decides who carries the risk between signing and closing, and afterwards. Cash leaves all risk with the buyer; stock shares it with the seller; contingent structures price the disagreement between them.</p>
+  <div class="tw"><table>
+    <tr><th></th><th>Cash <span class="de">Barangebot</span></th><th>Stock <span class="de">Tauschangebot</span></th></tr>
+    <tr><td><b>Risk</b></td><td>Buyer bears all of it; seller gets a certain amount.</td><td>Target holders share in overpayment and in synergies.</td></tr>
+    <tr><td><b>Signal</b></td><td>Buyer is confident; its shares are not overvalued.</td><td>Buyer may think its shares are rich. Bidder price usually falls.</td></tr>
+    <tr><td><b>Control</b></td><td>No dilution of existing owners.</td><td>New shareholders; may need a buyer vote above 20% new shares (US).</td></tr>
+    <tr><td><b>Tax (seller)</b></td><td>Taxed now.</td><td>Often deferred until the new shares are sold.</td></tr>
+    <tr><td><b>Speed</b></td><td>Fast; the only route for hostile bids and buyouts.</td><td>Slower: registration, valuation of the paper.</td></tr>
+  </table></div>
+  <p><b>Fixed exchange ratio:</b> number of shares fixed, value floats with the buyer's price (the norm). <b>Floating ratio:</b> value fixed, number of shares set just before closing. The market reads a floating ratio as confidence.</p>
+
+  <h3>Collar: protection when closing is far away</h3>
+  <figure>
+    <svg viewBox="0 0 640 210" role="img" aria-label="Payoff of the AT&T Time Warner fixed value collar">
+      <line class="ax" x1="60" y1="170" x2="570" y2="170"/><line class="ax" x1="60" y1="14" x2="60" y2="170"/>
+      <line class="ax" x1="229.7" y1="88.8" x2="229.7" y2="170" stroke-dasharray="3 3"/><line class="ax" x1="381.1" y1="88.8" x2="381.1" y2="170" stroke-dasharray="3 3"/>
+      <polyline points="60,161.3 560,13.5" fill="none" stroke="var(--faint)" stroke-width="1.5" stroke-dasharray="5 4"/>
+      <polyline class="ln" points="60,141.5 229.7,88.8 381.1,88.8 560,38.4"/>
+      <text class="t-num" x="60" y="188" text-anchor="middle">$33</text><text class="t-num" x="229.7" y="188" text-anchor="middle">$37.41</text><text class="t-num" x="381.1" y="188" text-anchor="middle">$41.35</text><text class="t-num" x="560" y="188" text-anchor="middle">$46</text>
+      <text class="t-soft" x="315" y="205" text-anchor="middle">AT&amp;T share price at closing</text>
+      <text class="t-num" x="54" y="93" text-anchor="end">$53.75</text>
+      <text x="305" y="80" text-anchor="middle">fixed value: $53.75</text>
+      <text x="120" y="110" text-anchor="middle">1.437 shares</text><text x="490" y="84" text-anchor="middle">1.300 shares</text>
+      <text class="t-soft" x="470" y="26" text-anchor="end">no collar: 1.365 shares</text>
+    </svg>
+    <figcaption>Stock portion of AT&amp;T–Time Warner (2016), a fixed-value collar. Inside the band the holder gets $53.75 of shares whatever the price; outside it the ratio is fixed. As options, relative to a fixed $53.75: short 1.437 puts struck at $37.41 and long 1.3 calls struck at $41.35. About a third of stock deals have a collar, and they close more often.</figcaption>
+  </figure>
+  <div class="grid3">
+    <div class="card"><h4>Collar</h4><p>Adjusts the <b>number of shares</b> for the buyer's price <b>before closing</b>. Fixed-value type is common; fixed-exchange type (ratio fixed inside the band, value capped outside) is rare.</p></div>
+    <div class="card"><h4>CVR · contingent value right</h4><p>A separate right paying out <b>after closing</b>. Price-protection CVR = a put spread on the buyer's share. Event CVR pays on a milestone: Pfizer–Metsera (2025) ended at $65.60 cash + up to $20.65 CVR.</p></div>
+    <div class="card"><h4>Earnout · <span class="de">Earn-out</span></h4><p>Extra payment if the <b>acquired business</b> hits targets. A call option on its future results. Common for private targets where the seller knows more and keeps running it. Playtika–SuperPlay: $700m plus up to $1.25bn. Often ends in court, since the buyer controls the numbers.</p></div>
+  </div>
+
+  <h3>Fees and the probability of closing</h3>
+  <div class="grid2">
+    <div class="card"><h4>Termination fees</h4><ul>
+      <li><b>Break fee</b> (target pays buyer if it takes a better offer): typically 3–4% of equity value. Deals with one show higher premiums and less competition.</li>
+      <li><b>Reverse break fee</b> (buyer pays if financing or antitrust fails): median 4–5%, no upper convention. A large one signals confidence.</li>
+      <li>Netflix–Warner Bros. Discovery (Dec 2025): $2.8bn (3.9%) one way, $5.8bn (8.1%) the other. Paramount later won at $81bn and Netflix collected the $2.8bn.</li>
+      <li>Fox–Roku (June 2026, $22bn): Fox pays $1,237m (5.6%), Roku pays $866m (3.9%).</li></ul></div>
+    <div class="card"><h4>What the market thinks: α</h4>
+      <div class="f" style="margin-top:0">P<sub>after</sub> = α × P<sub>offer</sub> + (1 − α) × P<sub>as-is</sub>
+α = (P<sub>after</sub> − P<sub>as-is</sub>) ÷ (P<sub>offer</sub> − P<sub>as-is</sub>)</div>
+      <p>Muster AG trades at €19 after the €20 offer; it was €16 before: α = 3 ÷ 4 = <b>75%</b>. A merger arbitrageur buying at €19 earns 5.3% if it closes and loses 15.8% if it breaks. In a stock deal the arbitrageur also shorts the buyer.</p>
+      <p class="small">Example: Monsanto offered $97 for Syngenta; at $92 the market implied α = 0.83. The deal was abandoned.</p></div>
+  </div>
+  <div class="links">Needs: <a class="x" href="#m6">M6</a> cost of each currency · Links: <a class="x" href="#m5">M5</a> signalling evidence · <a class="x" href="#m8">M8</a> earnouts and fees are SPA clauses · <a class="x" href="#m9">M9</a> break fees and board duties</div>
+</section>
+
+<section id="m8">
+  <div class="mhead"><span class="code">M8</span><h2>Deal process, due diligence and the contract</h2></div>
+  <p class="idea">A sale process is a funnel: many buyers with little information become one buyer with full information and a signed contract. Each stage trades confidentiality against price tension.</p>
+  <h3>Sell-side auction · <span class="de">Bieterverfahren</span></h3>
+  <div class="steps">
+    <div><b>Prepare</b>Equity story, vendor due diligence, valuation, buyer list. 4–8 weeks</div>
+    <div><b>Approach</b>Teaser (anonymous), then NDA <span class="de">Vertraulichkeitsvereinbarung</span></div>
+    <div><b>Round 1</b>Information memorandum; non-binding offers <span class="de">indikative Angebote</span></div>
+    <div><b>Round 2</b>Data room, management presentation, site visits, full due diligence</div>
+    <div><b>Binding offers</b>Price plus mark-up of the SPA; pick one, grant exclusivity</div>
+    <div><b>Signing</b>Contract signed <span class="de">Unterzeichnung</span></div>
+    <div><b>Conditions</b>Antitrust, FDI, financing, votes <span class="de">Vollzugsbedingungen</span></div>
+    <div><b>Closing</b>Shares and money change hands <span class="de">Vollzug</span>; integration starts</div>
+  </div>
+  <p>Typical length 4 to 6 months to signing. <b>Broad auction</b> maximises price but leaks; <b>limited auction</b> balances; <b>bilateral talks</b> are discreet and fast but lack competition. <b>Buy-side</b> runs the mirror image: strategy and criteria, long list, short list, approach, indicative valuation, LOI <span class="de">Absichtserklärung</span>, due diligence, financing, SPA, integration plan.</p>
+  <div class="grid2">
+    <div class="card"><h4>Due diligence streams · <span class="de">Sorgfaltsprüfung</span></h4><ul>
+      <li><b>Financial:</b> quality of earnings, normalised EBITDA, net debt, normal working capital <a class="x" href="#m1">M1</a></li>
+      <li><b>Commercial:</b> market, customers, competition, plan plausibility</li>
+      <li><b>Legal:</b> contracts, change-of-control clauses, litigation, IP, licences</li>
+      <li><b>Tax:</b> exposures, loss carry-forwards, structure</li>
+      <li><b>Plus:</b> HR and pensions, IT and cyber, ESG, regulatory. For a gaming group, licences and compliance come first.</li></ul>
+      <p>Findings end up in exactly three places: the price, the contract protection, or a walk-away.</p></div>
+    <div class="card"><h4>The SPA · <span class="de">Unternehmenskaufvertrag</span></h4><ul>
+      <li><b>Price and mechanism</b> (below), earnout, vendor loan <span class="de">Verkäuferdarlehen</span></li>
+      <li><b>Reps and warranties</b> <span class="de">Garantien</span>: statements the seller stands behind, with caps, baskets and time limits</li>
+      <li><b>Indemnities</b> <span class="de">Freistellungen</span>: euro-for-euro cover for known risks such as tax</li>
+      <li><b>Covenants:</b> run the business normally until closing; non-compete</li>
+      <li><b>MAC clause:</b> buyer may walk after a material adverse change. Rarely enforced.</li>
+      <li><b>W&amp;I insurance:</b> an insurer covers warranty breaches so the seller exits cleanly</li></ul></div>
+  </div>
+  <h3>The documents, in the order they appear</h3>
+  <div class="tw"><table>
+    <tr><th>Document</th><th>German</th><th>What it is</th></tr>
+    <tr><td><b>Teaser</b></td><td><span class="de">anonymes Kurzprofil</span></td><td>One to two pages, <b>no company name</b>. Sector, size, key figures, investment highlights. Sent to the short list to test interest.</td></tr>
+    <tr><td>NDA</td><td><span class="de">Vertraulichkeitsvereinbarung</span></td><td>Signed before the name and details are disclosed. Also bars approaching staff and customers.</td></tr>
+    <tr><td>Information memorandum (IM, CIM)</td><td><span class="de">Informationsmemorandum</span></td><td>50 to 100 pages: business, market, management, historical financials, business plan. Names the company.</td></tr>
+    <tr><td>Process letter</td><td><span class="de">Prozessbrief</span></td><td>Deadlines and required content of each offer.</td></tr>
+    <tr><td>Non-binding offer (NBO)</td><td><span class="de">indikatives Angebot</span></td><td>Price range as enterprise value, assumptions, financing, approvals needed.</td></tr>
+    <tr><td>Vendor due diligence report, fact book</td><td><span class="de">Verkäufer-Due-Diligence</span></td><td>The seller's own financial and tax review, handed to bidders.</td></tr>
+    <tr><td>Management presentation</td><td><span class="de">Managementpräsentation</span></td><td>Management meets each remaining bidder for half a day.</td></tr>
+    <tr><td>Data room and Q&amp;A</td><td><span class="de">Datenraum</span></td><td>All contracts and detailed numbers; questions answered in writing.</td></tr>
+    <tr><td>Binding offer</td><td><span class="de">bindendes Angebot</span></td><td>Final price, contract mark-up, proof of financing.</td></tr>
+    <tr><td>SPA and disclosure schedules</td><td><span class="de">Unternehmenskaufvertrag</span></td><td>The contract. For GmbH shares it must be notarised.</td></tr>
+    <tr><td>Transitional services agreement</td><td><span class="de">Übergangsdienstleistungsvertrag</span></td><td>In carve-outs: the seller keeps providing IT, payroll and the like for a period.</td></tr>
+  </table></div>
+
+  <h3>Sell-side in detail</h3>
+  <div class="tw"><table>
+    <tr><th>Phase</th><th>Weeks</th><th>What happens</th></tr>
+    <tr><td>0 · Mandate</td><td class="num">–</td><td>Owner decides what to sell; advisers pitch; engagement letter with retainer and success fee; choice of broad auction, limited auction or bilateral talks.</td></tr>
+    <tr><td>1 · Preparation</td><td class="num">4–8</td><td>Equity story, business plan, internal valuation (DCF, multiples, LBO), vendor due diligence, long list and short list of buyers, drafting of teaser, IM and SPA, data room set-up.</td></tr>
+    <tr><td>2 · Marketing</td><td class="num">2–4</td><td>Teaser out, NDAs back, IM and process letter sent.</td></tr>
+    <tr><td>3 · First round</td><td class="num">3–5</td><td>Bidders analyse the IM and submit non-binding offers. Seller picks three to six for round two on price, credibility and certainty.</td></tr>
+    <tr><td>4 · Second round</td><td class="num">6–10</td><td>Data room, management presentations, site visits, expert sessions, Q&amp;A, full due diligence. Bidders mark up the SPA; sponsors line up bank financing; W&amp;I insurance is arranged.</td></tr>
+    <tr><td>5 · Final bids</td><td class="num">2–4</td><td>Binding offers. Seller weighs price, contract terms and certainty of closing, then negotiates with one or two, often under exclusivity.</td></tr>
+    <tr><td>6 · Signing</td><td class="num">–</td><td>SPA signed and announced.</td></tr>
+    <tr><td>7 · Interim period</td><td class="num">4–26+</td><td>Merger control, foreign investment review, sector licences, third-party consents. Seller runs the business in the ordinary course; buyer plans integration but may not yet direct the company.</td></tr>
+    <tr><td>8 · Closing</td><td class="num">–</td><td>Shares transfer, price is paid, old debt repaid. Price adjustment if closing accounts apply; later earn-out and warranty claims.</td></tr>
+  </table></div>
+
+  <h3>Buy-side in detail</h3>
+  <p>This is the daily work of a corporate M&amp;A team. The buyer starts from its own strategy, not from a process someone else designed.</p>
+  <div class="tw"><table>
+    <tr><th>Step</th><th>What the buyer does</th><th>Output</th></tr>
+    <tr><td>1 · Strategy</td><td>Where does the group want to grow: product, region, technology? Build, partner or buy?</td><td>Acquisition criteria: size, margin, geography, fit</td></tr>
+    <tr><td>2 · Screening</td><td>Scan the market against the criteria; rank by fit and likely availability.</td><td>Long list, then short list of targets</td></tr>
+    <tr><td>3 · Approach</td><td>Contact owners directly or via an adviser, or receive a teaser from a seller's bank. Sign an NDA.</td><td>First information, access to management</td></tr>
+    <tr><td>4 · First valuation</td><td>Standalone value from multiples and DCF, plus a first view on synergies. Define the walk-away price.</td><td>Non-binding offer or letter of intent <span class="de">Absichtserklärung</span>, ideally with exclusivity</td></tr>
+    <tr><td>5 · Due diligence</td><td>Financial, commercial, legal, tax and operational review with external advisers. Test the plan and the synergy case.</td><td>Red-flag list: price changes, contract protection, or stop</td></tr>
+    <tr><td>6 · Final valuation and financing</td><td>Update the model, run accretion and leverage, secure cash, credit lines or shares.</td><td>Board paper and approval <span class="de">Gremienvorlage</span></td></tr>
+    <tr><td>7 · Negotiation and signing</td><td>Price mechanism, warranties, indemnities, conditions.</td><td>Signed SPA</td></tr>
+    <tr><td>8 · Approvals and closing</td><td>Merger control and other filings; Day-1 readiness.</td><td>Closing</td></tr>
+    <tr><td>9 · Integration</td><td>Organisation, systems, people, synergy tracking against the business case.</td><td>Post-merger integration report</td></tr>
+  </table></div>
+  <p><b>Maximum price logic:</b> standalone value + value of synergies − integration costs = the most the buyer can pay. Everything paid above standalone value is synergy handed to the seller <a class="x" href="#m5">M5</a>.</p>
+
+  <h3>Strategic buyer versus private equity in a process</h3>
+  <div class="tw"><table>
+    <tr><th></th><th>Strategic buyer</th><th>Private equity fund</th></tr>
+    <tr><td>Price</td><td>Can pay for synergies; usually higher</td><td>Capped by target return and available debt</td></tr>
+    <tr><td>Speed</td><td>Slower: board, supervisory board, sometimes shareholders</td><td>Fast and practised; investment committee only</td></tr>
+    <tr><td>Financing</td><td>Cash, own credit lines, shares</td><td>Mostly debt, with bank commitment letters</td></tr>
+    <tr><td>Due diligence focus</td><td>Synergies and integration; knows the market already</td><td>Cash flow stability, debt capacity, management, exit</td></tr>
+    <tr><td>Antitrust</td><td>Often the main closing risk</td><td>Usually simple, unless the fund already owns a competitor</td></tr>
+    <tr><td>Management</td><td>Often replaced or absorbed</td><td>Kept and given an equity stake</td></tr>
+    <tr><td>Seller's worry</td><td>Showing sensitive data to a competitor</td><td>Lower price</td></tr>
+  </table></div>
+
+  <h3>From enterprise value to the cheque: two price mechanisms</h3>
+  <p>Offers are made on a <b>cash-free, debt-free</b> basis, meaning as an enterprise value. The contract then turns it into an equity price with the bridge from <a class="x" href="#m2">M2</a>.</p>
+  <div class="f">Headline EV                                967.5
+− Financial debt and debt-like items       −140.0   (pensions, leases, tax due, unpaid dividends are argued here)
++ Cash                                      +72.5
+± Working capital vs. agreed normal level     0.0   (NWC 80 delivered vs. peg 80)
+= Equity purchase price                     900.0</div>
+  <div class="tw"><table>
+    <tr><th></th><th>Locked box</th><th>Closing accounts <span class="de">Stichtagsbilanz</span></th></tr>
+    <tr><td>Price fixed</td><td>At signing, from a past balance sheet date</td><td>After closing, from a balance sheet drawn up at closing</td></tr>
+    <tr><td>Risk passes</td><td>At the locked-box date. Buyer is protected against “leakage” (dividends, fees to the seller)</td><td>At closing. Price is adjusted for actual net debt and working capital</td></tr>
+    <tr><td>Favours</td><td>Seller: certainty, no later dispute. Standard in European auctions and private equity exits</td><td>Buyer: pays for what it gets. Standard in the US and in carve-outs</td></tr>
+    <tr><td>Typical fight</td><td>What counts as permitted leakage; interest on the price until closing</td><td>Definitions of debt and “normal” working capital</td></tr>
+  </table></div>
+  <div class="trap"><p><b>Trap.</b> Sellers manage working capital down before closing to show more cash. The working capital peg exists to neutralise exactly that: cash goes up, working capital falls below the peg, and the price adjustment cancels it.</p></div>
+  <div class="links">Needs: <a class="x" href="#m2">M2</a> bridge · <a class="x" href="#m3">M3</a> <a class="x" href="#m4">M4</a> valuation for each bid · Links: <a class="x" href="#m7">M7</a> earnouts and fees · <a class="x" href="#m9">M9</a> conditions between signing and closing</div>
+</section>
+
+<section id="m9">
+  <div class="mhead"><span class="code">M9</span><h2>Takeover law: Germany versus the US, and antitrust</h2></div>
+  <p class="idea">Germany regulates public takeovers by statute with fixed ownership thresholds. The US leaves it to boards and Delaware judges. Name the system before you answer.</p>
+  <h3>Germany: the threshold ladder</h3>
+  <figure>
+    <svg viewBox="0 0 640 150" role="img" aria-label="German ownership thresholds from 3 to 95 percent">
+      <line x1="40" y1="74" x2="600" y2="74" stroke="var(--accent)" stroke-width="6" stroke-linecap="round"/>
+      <g><circle cx="56.8" cy="74" r="6" class="b1"/><circle cx="208" cy="74" r="7" class="b-neg"/><circle cx="320" cy="74" r="6" class="b1"/><circle cx="460" cy="74" r="6" class="b1"/><circle cx="544" cy="74" r="6" class="b1"/><circle cx="572" cy="74" r="6" class="b1"/></g>
+      <text x="40" y="46" font-weight="700">3%</text><text class="t-soft" x="40" y="30">first voting-rights notice</text>
+      <text x="208" y="106" text-anchor="middle" font-weight="700">30% = control</text><text class="t-soft" x="208" y="122" text-anchor="middle">mandatory offer to all</text>
+      <text x="320" y="46" text-anchor="middle" font-weight="700">50%</text><text class="t-soft" x="320" y="30" text-anchor="middle">majority at the AGM</text>
+      <text x="452" y="106" text-anchor="middle" font-weight="700">75%</text><text class="t-soft" x="452" y="122" text-anchor="middle">domination agreement</text>
+      <text x="544" y="46" text-anchor="middle" font-weight="700">90%</text><text class="t-soft" x="544" y="30" text-anchor="middle">merger squeeze-out</text>
+      <text x="600" y="106" text-anchor="end" font-weight="700">95%</text><text class="t-soft" x="600" y="122" text-anchor="end">squeeze-out</text>
+    </svg>
+    <figcaption>Share of voting rights in a listed German company and what each level unlocks.</figcaption>
+  </figure>
+  <div class="tw"><table>
+    <tr><th>Level</th><th>German term and law</th><th>Meaning</th></tr>
+    <tr><td class="num">3, 5, 10 … %</td><td><span class="de">Stimmrechtsmitteilung</span>, § 33 WpHG</td><td>Must disclose when crossing each threshold.</td></tr>
+    <tr><td class="num">30%</td><td><span class="de">Pflichtangebot</span>, §§ 29, 35 WpÜG</td><td>Control is reached; must bid for all remaining shares. A <span class="de">freiwilliges Übernahmeangebot</span> aimed at control follows the same price rules.</td></tr>
+    <tr><td class="num">75%</td><td><span class="de">Beherrschungs- und Gewinnabführungsvertrag</span>, § 291 AktG</td><td>Parent may instruct management and take the profits; minorities get a guaranteed dividend or a cash exit. Also the majority for mergers and charter changes.</td></tr>
+    <tr><td class="num">90%</td><td><span class="de">Verschmelzungsrechtlicher Squeeze-out</span>, § 62 (5) UmwG</td><td>Force out minorities in connection with a merger into the parent.</td></tr>
+    <tr><td class="num">95%</td><td><span class="de">Aktienrechtlicher Squeeze-out</span>, § 327a AktG</td><td>Force out minorities for cash. They can challenge the price (<span class="de">Spruchverfahren</span>) but not the exit.</td></tr>
+  </table></div>
+  <ul>
+    <li><b>Minimum price:</b> at least the 3-month volume-weighted average price before announcement, and at least the highest price the bidder paid in the prior 6 months.</li>
+    <li><b>Process:</b> announce, file the offer document with BaFin, acceptance period of 4 to 10 weeks, reasoned statement by both boards of the target (<span class="de">begründete Stellungnahme</span>), usually with a fairness opinion.</li>
+    <li><b>Defences are limited:</b> management must not frustrate a bid (<span class="de">Verhinderungsverbot</span>, § 33 WpÜG) without supervisory board approval or a shareholder vote. No US-style poison pill.</li>
+    <li><b>Market colour</b> (Takeover Report 2026): average premium fell from 43.6% to 26.5% in 2025.</li>
+  </ul>
+  <div class="ex"><p><b>Zalando – ABOUT YOU, the full ladder in one deal.</b> Dec 2024: voluntary offer at €6.50, a 107% premium to the €3.14 three-month average, with the stated aim of a squeeze-out. July 2025: EU clearance, closing, stake 91.45%. Nov 2025: merger squeeze-out registered, ABOUT YOU delisted.</p></div>
+
+  <h3>United States: board discretion and case law</h3>
+  <div class="grid2">
+    <div class="card"><h4>Two routes to a public target</h4><ul>
+      <li><b>Merger:</b> negotiated with the board, proxy statement, shareholder vote. 2 to 3 months.</li>
+      <li><b>Tender offer:</b> straight to shareholders, open at least 20 business days (Williams Act). The only hostile route. Above 90% in Delaware, a short-form merger squeezes out the rest without a vote.</li>
+      <li><b>Bear hug:</b> a public letter to the board with a generous price (Microsoft to Yahoo, 2008, 60% premium).</li></ul></div>
+    <div class="card"><h4>Defences</h4><ul>
+      <li><b>Poison pill:</b> if anyone crosses about 15%, all other holders may buy shares at half price, diluting the bidder. Board can adopt it overnight (Twitter, 2022).</li>
+      <li><b>Staggered board:</b> a third elected each year, so control takes two elections.</li>
+      <li>Supermajority and fair-price clauses, white knight, leveraged recap, selling the prized unit.</li>
+      <li>Delaware statute: crossing 15% blocks a merger for 3 years unless the board agreed, the bidder got 85%, or two-thirds of other holders approve.</li></ul></div>
+  </div>
+  <div class="tw"><table>
+    <tr><th>Case</th><th>One-line rule</th></tr>
+    <tr><td>Van Gorkom (1985)</td><td>Boards must decide on an informed basis; process is reviewed, not just price.</td></tr>
+    <tr><td>Unocal (1985)</td><td>A defence must answer a real threat and be proportionate to it.</td></tr>
+    <tr><td>Moran (1985)</td><td>The poison pill is legal.</td></tr>
+    <tr><td>Revlon (1985–86)</td><td>Once the company is for sale, the board's job is the highest price.</td></tr>
+    <tr><td>Paramount v. Time (1989)</td><td>If it is not for sale, the board may prefer its long-term plan to a higher bid.</td></tr>
+  </table></div>
+
+  <h3>Merger control and investment screening</h3>
+  <div class="tw"><table>
+    <tr><th>Regime</th><th>Files when</th><th>Notes</th></tr>
+    <tr><td>Germany, <span class="de">Bundeskartellamt</span> (§ 35 GWB)</td><td>Combined worldwide sales over €500m, one party over €50m and another over €17.5m in Germany</td><td>Phase 1 one month; phase 2 up to five.</td></tr>
+    <tr><td>EU Commission</td><td>Combined worldwide over €5bn and two parties each over €250m in the EU</td><td>One-stop shop; replaces national filings.</td></tr>
+    <tr><td>US, Hart-Scott-Rodino</td><td>Size thresholds, adjusted yearly</td><td>Waiting period before closing; DoJ or FTC reviews.</td></tr>
+    <tr><td>Foreign investment</td><td>Sensitive sectors, non-domestic buyer</td><td>Germany: <span class="de">Investitionsprüfung</span> under the AWV. US: CFIUS (Nippon Steel–U.S. Steel).</td></tr>
+  </table></div>
+  <p>The core question is always <b>market definition</b>. Regulators ask whether a hypothetical monopolist could raise prices by about 5%. Tapestry–Capri was blocked in 2024 because the court accepted “accessible luxury handbags” as a market with a 58% combined share. Illumina closed Grail without clearance and was forced to divest. Concentration is screened with the HHI, the sum of squared market shares.</p>
+  <div class="links">Links: <a class="x" href="#m5">M5</a> agency problem and market power · <a class="x" href="#m7">M7</a> reverse break fees price antitrust risk · <a class="x" href="#m8">M8</a> clearances are closing conditions · <a class="x" href="#m4">M4</a> Ertragswert sets the squeeze-out price</div>
+</section>
+
+<section id="m10">
+  <div class="mhead"><span class="code">M10</span><h2>LBO, private equity and what deals do to debt</h2></div>
+  <p class="idea">A leveraged buyout is a house bought with a mortgage and rented out: the tenant's cash flow repays the loan, and the owner keeps the equity that builds up.</p>
+  <div class="f">Muster AG paper LBO. Entry at the offer: EV 967.5 = 8.06× EBITDA 120
+Sources: debt 600 (5.0×) + sponsor equity 367.5        Uses: buy equity 900 + refinance net debt 67.5
+Five years: EBITDA 120 → 150, debt repaid 600 → 400, exit at the same 8.06× → EV 1,209
+Exit equity = 1,209 − 400 = 809   →   <b>2.2× money, IRR ≈ 17%</b></div>
+  <figure>
+    <svg viewBox="0 0 640 172" role="img" aria-label="LBO value creation: entry equity 367.5 plus EBITDA growth 242 plus debt paydown 200 equals exit equity 809">
+      <line class="ax" x1="130" y1="6" x2="130" y2="166"/>
+      <text x="122" y="33" text-anchor="end">Entry equity</text><rect class="b2" x="130" y="16" width="203.2" height="26"/><text class="t-num" x="339" y="33">367.5</text>
+      <text x="122" y="71" text-anchor="end">+ EBITDA growth</text><rect class="b-ok" x="333.2" y="54" width="133.8" height="26"/><text class="t-num" x="473" y="71">+242</text>
+      <text x="122" y="109" text-anchor="end">+ Debt paydown</text><rect class="b-ok" x="467" y="92" width="110.6" height="26"/><text class="t-num" x="583" y="109">+200</text>
+      <text x="122" y="147" text-anchor="end">= Exit equity</text><rect class="b1" x="130" y="130" width="447.4" height="26"/><text class="t-num" x="583" y="147">809</text>
+    </svg>
+    <figcaption>Where the return comes from. The third lever, selling at a higher multiple than you paid, is zero here by assumption. Buy-and-build adds it: small add-ons bought at 5× are valued at the platform's 8×.</figcaption>
+  </figure>
+  <div class="grid2">
+    <div class="card"><h4>Good LBO candidate</h4><ul><li>Stable, predictable cash flow</li><li>Low CapEx and working capital needs</li><li>Strong market position, room to improve margins</li><li>Clean balance sheet, assets to borrow against</li><li>A visible exit: sale, another fund, IPO</li></ul></div>
+    <div class="card"><h4>Mental IRR table</h4><p class="mono">2.0× in 3 years ≈ 26%<br>2.0× in 5 years ≈ 15%<br>2.5× in 5 years ≈ 20%<br>3.0× in 5 years ≈ 25%<br>Rule of 72: doubling time ≈ 72 ÷ rate</p></div>
+  </div>
+  <div class="tw"><table>
+    <tr><th>Layer</th><th>Rank</th><th>Features</th></tr>
+    <tr><td>Revolver, term loan A</td><td>Senior secured</td><td>Banks, cheapest, amortising, maintenance covenants tested every quarter</td></tr>
+    <tr><td>Term loan B</td><td>Senior secured</td><td>Institutional lenders, bullet repayment, floating rate</td></tr>
+    <tr><td>High-yield bond</td><td>Senior unsecured or subordinated</td><td>Fixed coupon, bullet, incurrence covenants tested only on an action</td></tr>
+    <tr><td>Mezzanine, PIK</td><td>Junior</td><td>Interest accrues instead of being paid; often with equity warrants</td></tr>
+    <tr><td>Equity</td><td>Last</td><td>Sponsor plus management rollover; typically 40–50% today</td></tr>
+  </table></div>
+  <p><b>Fund economics:</b> limited partners commit capital for about 10 years; the general partner earns a 2% management fee and 20% carried interest above an 8% hurdle. <b>Strategic vs. financial buyer:</b> the strategic can pay for synergies; the fund pays what its return target allows, which is why the LBO value is the floor in <a class="x" href="#m3">M3</a>.</p>
+  <h3>The LBO model step by step</h3>
+  <div class="tw"><table>
+    <tr><th>Step</th><th>What you do</th><th>Muster AG</th></tr>
+    <tr><td>1 · Entry price</td><td>Offer price → equity value → enterprise value and entry multiple.</td><td>EV 967.5 = 8.06× EBITDA</td></tr>
+    <tr><td>2 · Sources and uses</td><td>Uses: buy the equity, repay existing debt, pay fees. Sources: debt tranches sized as multiples of EBITDA; sponsor equity is whatever is left.</td><td>Debt 600 (5.0×), equity 367.5 (38%)</td></tr>
+    <tr><td>3 · Opening balance sheet</td><td>Old equity out, new debt and sponsor equity in, goodwill created as in a merger <a class="x" href="#m6">M6</a>.</td><td></td></tr>
+    <tr><td>4 · Operating forecast</td><td>Revenue, EBITDA, CapEx, working capital for about five years.</td><td>EBITDA 120 → 150</td></tr>
+    <tr><td>5 · Debt schedule</td><td>Each year: EBITDA − cash interest − cash taxes − CapEx − working capital = cash for repayment. Mandatory amortisation first, then a cash sweep of the rest into the most senior prepayable loan.</td><td>About 40 a year → 600 down to 400</td></tr>
+    <tr><td>6 · Exit</td><td>Exit EBITDA × exit multiple = EV. Subtract remaining net debt.</td><td>1,209 − 400 = 809</td></tr>
+    <tr><td>7 · Returns</td><td>Money multiple and IRR for the sponsor. Compare with the fund's hurdle of roughly 20%.</td><td>2.2×, about 17%</td></tr>
+    <tr><td>8 · Sensitivities</td><td>Entry multiple against exit multiple; leverage against EBITDA growth.</td><td></td></tr>
+  </table></div>
+  <div class="grid2">
+    <div class="card"><h4>Why leverage lifts the return</h4>
+      <p>Buy for 1,000, sell for 1,300 five years later, interest paid from cash flow, no repayment.</p>
+      <p class="mono">All equity: 1,000 → 1,300 = 1.3×, IRR 5%<br>With 600 debt: 400 → 700 = 1.75×, IRR 12%</p>
+      <p>The same 300 gain lands on a smaller cheque. It cuts both ways: sell at 800 and the all-equity owner loses 20%, the leveraged one loses half.</p></div>
+    <div class="card"><h4>Using an LBO to value a company</h4>
+      <p>Run it backwards. Fix the required IRR (say 20%), the leverage banks will give and the exit multiple, then solve for the highest entry price. That price is the LBO bar in the football field <a class="x" href="#m3">M3</a>.</p>
+      <p><b>Exit routes:</b> sale to a strategic buyer, sale to another fund (secondary buyout), IPO, or a dividend recapitalisation that takes cash out early by re-borrowing.</p></div>
+  </div>
+  <div class="grid2">
+    <div class="card"><h4>How to raise the IRR</h4><ul>
+      <li>Pay less at entry.</li><li>Use more debt, as far as cash flow can carry it.</li><li>Grow EBITDA faster: revenue, margins, add-on acquisitions.</li><li>Sell at a higher multiple.</li><li>Exit sooner: the same multiple of money in fewer years is a higher IRR.</li><li>Take dividends along the way.</li></ul></div>
+    <div class="card"><h4>IRR versus money multiple</h4>
+      <p>The multiple says how much, the IRR says how fast. 2.0× in three years is 26%; 2.0× in seven years is 10%. Funds report both, because a quick flip has a high IRR but little absolute gain.</p>
+      <p><b>Management:</b> keeps running the company and invests alongside the fund on favourable terms, so its payoff depends on the exit.</p></div>
+  </div>
+  <h3>LBO interview examples</h3>
+  <details class="q"><summary>Paper LBO. EBITDA 100, entry at 10×, 60% debt. EBITDA grows to 150 in five years, 300 of debt is repaid, exit at 10×. Returns?</summary><p>Entry EV 1,000: debt 600, equity 400. Exit EV 1,500, debt left 300, equity 1,200. Multiple 3.0×, IRR about 25%. Sources of the 800 gain: EBITDA growth 500, debt paydown 300, multiple 0.</p></details>
+  <details class="q"><summary>Same deal, but the exit multiple falls to 8×.</summary><p>Exit EV 1,200, equity 900, multiple 2.25×, IRR about 18%. Multiple contraction cost 300.</p></details>
+  <details class="q"><summary>Why would a fund use debt at all if it has the cash?</summary><p>Debt is cheaper than equity and interest is tax-deductible; a smaller equity cheque raises the return on it; the fund can spread its capital over more deals; and debt service disciplines management.</p></details>
+  <details class="q"><summary>What makes a good LBO candidate?</summary><p>Stable cash flows, low CapEx and working capital needs, strong market position, room for margin improvement, a clean balance sheet, a capable management team and a clear exit.</p></details>
+  <details class="q"><summary>Can lenders earn more than the fund?</summary><p>Yes. High-yield lenders receive 10 to 15% by contract. If EBITDA barely grows, the entry price was too high or interest eats the cash flow, the sponsor's IRR falls below that. It signals a weak or over-leveraged deal.</p></details>
+  <details class="q"><summary>More leverage always means a higher IRR?</summary><p>No. Beyond what cash flow can service, interest absorbs the cash that would repay debt, covenants bite, and the risk of losing the equity rises. With a low-growth company or a high entry price, extra debt can lower the return.</p></details>
+  <details class="q"><summary>Bank debt versus high-yield bonds?</summary><p>Bank debt is senior, secured, cheaper, floating-rate, amortising and carries maintenance covenants. High-yield is junior, fixed-rate, repaid in one amount at maturity, with incurrence covenants and usually no early repayment.</p></details>
+  <details class="q"><summary>How does an LBO differ from a merger model?</summary><p>The mechanics of the purchase are the same. A merger model asks what happens to the buyer's EPS; an LBO asks what return the sponsor earns on its equity at exit. There are no synergies and no combined company.</p></details>
+
+  <h3>Bondholders in M&amp;A</h3>
+  <ul>
+    <li>A deal can move value between shareholders and creditors with no synergy at all. A safer combined company lifts risky bonds at shareholders' expense; a debt-funded deal does the opposite.</li>
+    <li>On average target bonds gain (junk-rated about +4%), acquirer bonds lose, combined roughly zero.</li>
+    <li><b>Change-of-control put:</b> bondholders may sell back at about 101% of face value if control changes. It protects them and raises the buyer's refinancing bill.</li>
+    <li>Ratner–Kay Jewelers (1990): the bid lifted Kay's stock 31% but offered bondholders 75 cents on the dollar; they resisted until the offer reached 90.</li>
+  </ul>
+  <div class="links">Needs: <a class="x" href="#m2">M2</a> net debt · <a class="x" href="#m3">M3</a> entry and exit multiples · Links: <a class="x" href="#m4">M4</a> APV for changing leverage · <a class="x" href="#m6">M6</a> after-tax cost of debt · <a class="x" href="#m11">M11</a> rates drive leverage</div>
+</section>
+
+<section id="m11">
+  <div class="mhead"><span class="code">M11</span><h2>The market now and deals to quote</h2></div>
+  <p class="idea">Interviewers want to see that you read the news with the tools above. Numbers below are as of early October 2026; check them again the day before.</p>
+  <div class="grid3">
+    <div class="card"><h4>Global M&amp;A 2025</h4><p><b class="mono">$4.9tn</b>, up 40% in value on 7% more deals. Second-best year on record; megadeals and AI drove it. <span class="small">Bain 2026 report</span></p></div>
+    <div class="card"><h4>2026 so far</h4><p><b class="mono">$3.9tn</b> through September, up 28%, strongest since 2001, on 8% fewer deals. Q3 alone fell 41% from Q2 to $993bn as borrowing costs rose. <span class="small">LSEG via Reuters</span></p></div>
+    <div class="card"><h4>Rates</h4><p>ECB deposit rate <b class="mono">2.50%</b> after hikes in June and September. Fed funds <b class="mono">3.75–4.00%</b> after a September hike. Both meet again at the end of October.</p></div>
+  </div>
+  <p><b>The chain to explain:</b> higher rates raise the cost of debt <a class="x" href="#m10">M10</a> and the discount rate <a class="x" href="#m4">M4</a>, so buyers can pay less while sellers still anchor on last year's multiples <a class="x" href="#m3">M3</a>. The gap is bridged with earnouts and vendor loans <a class="x" href="#m7">M7</a>, more equity in buyouts, and all-stock mergers.</p>
+  <div class="tw"><table>
+    <tr><th>Deal</th><th>Facts</th><th>What it teaches</th></tr>
+    <tr><td>Paramount – Warner Bros. Discovery (2025–26)</td><td>Netflix signed at $72bn; Paramount won at $81bn; Netflix kept a $2.8bn break fee</td><td>Bidding war, two-sided termination fees, antitrust and financing certainty as part of “price” <a class="x" href="#m7">M7</a></td></tr>
+    <tr><td>Fox – Roku (June 2026)</td><td>$22bn; reverse fee 5.6%, break fee 3.9%</td><td>Vertical logic: content buys distribution to 100m households <a class="x" href="#m5">M5</a></td></tr>
+    <tr><td>Pfizer – Metsera (2025)</td><td>From $47.50 + CVR to $65.60 cash + $20.65 CVR after Novo Nordisk intervened</td><td>CVR to bridge a view on clinical risk; winner's curse <a class="x" href="#m7">M7</a></td></tr>
+    <tr><td>Zalando – ABOUT YOU (2024–25)</td><td>€6.50 per share, 107% premium, squeeze-out and delisting</td><td>German public takeover from offer to squeeze-out <a class="x" href="#m9">M9</a></td></tr>
+    <tr><td>Union Pacific – Norfolk Southern (2025)</td><td>About $88bn rail merger</td><td>Horizontal scale deal; regulatory approval is the whole question <a class="x" href="#m9">M9</a></td></tr>
+  </table></div>
+  <div class="card"><h4>Template for talking about any deal, 60 seconds</h4>
+    <ol><li><b>Who and what:</b> buyer, target, date, cash or stock.</li><li><b>Price:</b> equity and enterprise value, premium, EV/EBITDA paid.</li><li><b>Why:</b> the strategic logic and the synergy number.</li><li><b>Risk:</b> antitrust, financing, integration.</li><li><b>Your view:</b> good deal or not, and what would change your mind.</li></ol></div>
+</section>
+
+<section id="m12">
+  <div class="mhead"><span class="code">M12</span><h2>Fit, story and case day</h2></div>
+  <p class="idea">More than half of an interview is about you. The technical part only decides whether your story is believed.</p>
+  <div class="grid2">
+    <div class="card"><h4>Three answers to have word-perfect in German</h4><ul>
+      <li><b>Lebenslauf in 90 seconds:</b> each station in one sentence, one learning per station, end on why this role.</li>
+      <li><b>Warum M&amp;A:</b> from reading financial statements to asking what they mean strategically. One concrete moment, not adjectives.</li>
+      <li><b>Warum dieses Unternehmen:</b> two of their recent deals and what you would want to learn from them.</li></ul>
+      <p class="small">Write full German drafts once, then rehearse them out loud instead of rewriting.</p></div>
+    <div class="card"><h4>Corporate M&amp;A versus a bank</h4><ul>
+      <li>In-house teams own the deal from strategy to integration; a bank's work ends at signing.</li>
+      <li>Fewer deals, deeper involvement, one sector.</li>
+      <li>Expect questions on strategy fit, integration and the industry, not only on models.</li>
+      <li>You are the client of banks and lawyers: judgment and coordination matter.</li></ul></div>
+  </div>
+  <h3>Behavioural answers: one structure</h3>
+  <p>Situation, task, action, result, and what you would do differently. Prepare five stories and reuse them: a conflict in a team, a mistake you owned, a tight deadline, persuading someone senior, working with ambiguity. Weakness: a real one, with what you already do about it.</p>
+  <h3>Typical case formats</h3>
+  <div class="tw"><table>
+    <tr><th>Format</th><th>What is tested</th><th>How to win</th></tr>
+    <tr><td>DCF in Excel (about 90 min)</td><td>Structure, clean formulas, defensible assumptions</td><td>Lay out the skeleton first <a class="x" href="#m4">M4</a>; link every number; add a sensitivity table; state EV and equity value.</td></tr>
+    <tr><td>Slide check (company profile)</td><td>Attention to detail</td><td>Check in passes: language consistency, number formats (decimal comma vs. point), units, totals that sum to 100%, footnotes and dates, titles, alignment.</td></tr>
+    <tr><td>Accretion maths, no calculator</td><td>Calm arithmetic</td><td>Use the yield comparison from <a class="x" href="#m6">M6</a>. Say each step aloud.</td></tr>
+    <tr><td>Paper LBO</td><td>Mechanics and rounding</td><td>Sources and uses, EBITDA at exit, debt left, equity, multiple, IRR from the table in <a class="x" href="#m10">M10</a>.</td></tr>
+    <tr><td>Company profile or pitch</td><td>Can you find what matters?</td><td>Business model, numbers, shareholders, recent deals, three possible targets with a reason each.</td></tr>
+  </table></div>
+  <p><b>Questions to ask them:</b> How is the M&amp;A team involved after closing? Which part of the last deal was hardest? What would an intern own in the first month?</p>
+</section>
+
+<section id="drill">
+  <div class="mhead"><h2>Drill: say the answer, then open it</h2></div>
+  <p class="idea">Classic interview questions. Thirty seconds each, out loud.</p>
+  <details class="q"><summary>Walk me through the three financial statements.</summary><p>Income statement shows revenue to net income for a period. Balance sheet shows assets against liabilities and equity at one date. Cash flow statement starts with net income, adds back non-cash items and working capital changes, then investing and financing, and ends with the change in cash. Net income flows into retained earnings; ending cash is the balance sheet cash. M1</p></details>
+  <details class="q"><summary>Depreciation rises by 10. Effects?</summary><p>Pre-tax income −10, net income −7.5 at 25% tax. Cash flow: −7.5 + 10 add-back = +2.5. Balance sheet: PP&amp;E −10, cash +2.5, so assets −7.5; retained earnings −7.5. M1</p></details>
+  <details class="q"><summary>What is enterprise value and why subtract cash?</summary><p>The value of the operating business to all capital providers: equity plus net debt plus other claims. Cash is non-operating and comes to the buyer, so it lowers the effective price. M2</p></details>
+  <details class="q"><summary>EV is 1,000. The company raises 500 of debt. New EV?</summary><p>Still 1,000 while the cash sits on the balance sheet. Debt +500 and cash +500 cancel. M2</p></details>
+  <details class="q"><summary>100 shares at $10, 10 options struck at $5. Diluted equity value?</summary><p>Proceeds $50 buy back 5 shares; 5 net new shares; 105 × $10 = $1,050. M2</p></details>
+  <details class="q"><summary>Which valuation method gives the highest value?</summary><p>Usually precedents, because they include a control premium, then DCF or comps, with LBO as a floor. But it depends on assumptions and market conditions, and a DCF can land anywhere. M3</p></details>
+  <details class="q"><summary>Walk me through a DCF.</summary><p>Project unlevered free cash flow for 5 to 10 years, discount at WACC, add a terminal value from Gordon growth or an exit multiple, sum to enterprise value, subtract net debt for equity value, divide by diluted shares. Then test WACC and growth. M4</p></details>
+  <details class="q"><summary>How do you get to WACC, and beta for a private company?</summary><p>Cost of equity from CAPM, after-tax cost of debt, weighted at target market-value structure. For a private company, unlever listed peers' betas, take the median, relever at the company's leverage. M4</p></details>
+  <details class="q"><summary>Two companies are identical, but one has debt. Which has the higher WACC?</summary><p>Normally the one without debt, since debt is cheaper and tax-shielded. At very high leverage the answer flips because distress risk raises both costs. M4</p></details>
+  <details class="q"><summary>Why would a company acquire another?</summary><p>Synergies, growth faster than building, technology or talent, market entry, an undervalued or badly run target, tax assets. Weak reasons: diversification and EPS accretion alone. M5</p></details>
+  <details class="q"><summary>Buyer P/E 20×, seller P/E 16×, all stock. Accretive?</summary><p>Accretive, provided 16× is the P/E at the price paid. The buyer issues expensive paper to buy cheaper earnings. If the premium pushes the paid P/E above 20×, it turns dilutive. M6</p></details>
+  <details class="q"><summary>Same deal, half stock and half debt at 8%, tax 25%.</summary><p>After-tax cost of debt 6%; cost of stock 1/20 = 5%; blended 5.5%. Target yield 1/16 = 6.25%. Still accretive. M6</p></details>
+  <details class="q"><summary>Company A: 10 shares at $25, net income $10. It buys B (net income $10) for $150 in stock.</summary><p>New shares 150 ÷ 25 = 6. Combined net income 20 over 16 shares = $1.25 versus $1.00. Accretive by 25%: A trades at 25× and pays 15×. M6</p></details>
+  <details class="q"><summary>All-stock or all-debt: which is cheaper for the buyer?</summary><p>Usually debt: its after-tax cost is below the cost of equity. Stock is cheaper only when the buyer's P/E is very high, so its earnings yield is below the after-tax interest rate. Debt has a capacity limit and adds risk. M6</p></details>
+  <details class="q"><summary>How is goodwill created?</summary><p>Purchase price minus the fair value of identifiable net assets, after writing assets up and booking a deferred tax liability on the write-up. Not amortised under IFRS; tested for impairment. M6</p></details>
+  <details class="q"><summary>Revenues of 100 each merge to 250. What besides synergies?</summary><p>Different reporting periods or currencies, acquisitions made in between, accounting changes such as gross versus net revenue, inflation or price increases, or simply organic growth between the two dates. M6</p></details>
+  <details class="q"><summary>Why pay in stock rather than cash?</summary><p>No cash or debt capacity needed, risk shared with the seller, tax deferral for the seller, useful when the buyer's shares are highly valued. Cost: dilution and a negative signal. M7</p></details>
+  <details class="q"><summary>Collar, CVR, earnout: the difference?</summary><p>Collar adjusts the share count for the buyer's price before closing. CVR pays after closing based on the buyer's price or an event. Earnout pays based on the acquired business's own performance. M7</p></details>
+  <details class="q"><summary>The target trades at 92 after a 97 offer; before it was 68. Probability of closing?</summary><p>(92 − 68) ÷ (97 − 68) = 83%. M7</p></details>
+  <details class="q"><summary>Describe a sell-side process.</summary><p>Preparation and buyer list, teaser and NDA, information memorandum, indicative bids, data room and management meetings, binding bids with contract mark-up, signing, clearances, closing. M8</p></details>
+  <details class="q"><summary>Locked box versus closing accounts?</summary><p>Locked box fixes the price at signing on a past balance sheet and protects against leakage; good for sellers. Closing accounts adjust the price after closing for actual net debt and working capital; good for buyers. M8</p></details>
+  <details class="q"><summary>What happens at 30% of a German listed company?</summary><p>Control under the WpÜG. The holder must make a mandatory offer to all shareholders at no less than the three-month average price and the highest price it paid in the last six months. M9</p></details>
+  <details class="q"><summary>How does a poison pill work?</summary><p>When a bidder crosses a trigger such as 15%, every other shareholder may buy new shares at a steep discount. The bidder is diluted so heavily that it must negotiate with the board. M9</p></details>
+  <details class="q"><summary>Revlon versus Unocal in one sentence each.</summary><p>Unocal: a defence must be a proportionate response to a real threat. Revlon: once the company is for sale, the board must get the best price. M9</p></details>
+  <details class="q"><summary>Walk me through an LBO and its return drivers.</summary><p>Set price and financing, build sources and uses, project cash flow and repay debt, sell after about five years, compute equity multiple and IRR. Drivers: EBITDA growth, multiple expansion, debt paydown. M10</p></details>
+  <details class="q"><summary>Why can a strategic buyer usually pay more than a fund?</summary><p>It can pay for synergies and has a lower cost of capital. A fund's price is capped by its return target and available leverage. M10</p></details>
+  <details class="q"><summary>How do higher interest rates affect M&amp;A?</summary><p>Costlier debt lowers buyout prices and accretion from debt deals; higher discount rates lower valuations; sellers adjust slowly, so volumes fall and structures such as earnouts and stock deals rise. M11</p></details>
+  <details class="q"><summary>You are the seller and want 100m in cash. How do you justify a higher price?</summary><p>Show a credible plan and the buyer's synergies, create competition, and offer structure: an earnout or vendor loan on top of the cash, or warranties that reduce the buyer's risk. M7, M8</p></details>
+</section>
+
+<section id="glossar">
+  <div class="mhead"><h2>Glossar English – Deutsch</h2></div>
+  <input id="gl-filter" type="search" placeholder="Filter, e.g. squeeze or Rück…" aria-label="Filter glossary">
+  <div class="tw"><table id="gl"><thead><tr><th>English</th><th>Deutsch</th><th>One line</th></tr></thead><tbody></tbody></table></div>
+</section>
+
+
+<footer class="dmsrc small"><p><b>Market data:</b> Bain Global M&amp;A Report 2026; LSEG figures reported by <a href="https://www.theglobeandmail.com/business/article-global-dealmaking-mergers-and-acquisitions-third-quarter-2026/">The Globe and Mail / Reuters</a>; <a href="https://www.federalreserve.gov/releases/h15/">Federal Reserve H.15</a>; ECB decision of 10 September 2026. Price mechanisms: <a href="https://wfw.com/articles/ma-basic-principles-part-ii-closing-accounts-vs-locked-box">WFW</a>, <a href="https://www.grantthornton.be/en/the-field/articles-and-publications/Advisory/Locked-box-versus-closing-accounts-when-is-one-or-the-other-preferable-in-an-MA-transaction/">Grant Thornton</a>.</p><p>Muster AG and Käufer SE are invented teaching examples. Legal thresholds are summaries for interview use, not legal advice. Market figures as of October 2026.</p></footer></div></main>
+<script src="js/config.js"></script>
+<script src="js/vendor/supabase.js"></script>
+<script src="js/core.js"></script>
+<script src="js/topics-head.js"></script>
+<script src="js/topics.js"></script>
+<script src="js/qbank.js"></script>
+<script src="js/topic-links.js"></script>
+</body>
+</html>
