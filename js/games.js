@@ -287,7 +287,7 @@ function compare(board,ms,prevBest,run,mistakes,acc){
       (d.friends||[]).forEach(function(fr){rows.push({name:fr.display_name,ms:fr.score,acc:pct(fr.mistakes)});});
       if(!(d.players>1)&&!(d.friends&&d.friends.length))rows.push(target);
       rows.sort(function(a,b){return a.ms-b.ms;});
-      draw(rows,(d.friends&&d.friends.length?L('Friends show their best time. ','Freunde mit ihrer Bestzeit. '):L('No friends yet: add them by code on your <a href="profile.html#friends">profile</a>. ','Noch keine Freunde: füge sie per Code in deinem <a href="profile.html#friends">Profil</a> hinzu. '))+'<a href="leaderboard.html?b='+board+L('">Full leaderboard →</a>','">Ganze Rangliste →</a>'));
+      draw(rows,(d.friends&&d.friends.length?L('Friends show their best time. ','Freunde mit ihrer Bestzeit. '):d.friend_count>0?L('Your friends have not played this game yet. ','Deine Freunde haben dieses Spiel noch nicht gespielt. '):L('No friends yet: add them by code on your <a href="profile.html#friends">profile</a>. ','Noch keine Freunde: füge sie per Code in deinem <a href="profile.html#friends">Profil</a> hinzu. '))+'<a href="leaderboard.html?b='+board+L('">Full leaderboard →</a>','">Ganze Rangliste →</a>'));
     });
   });
 }
