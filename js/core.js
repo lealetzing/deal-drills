@@ -163,12 +163,13 @@ function renderHeader(){
     '<nav class="tabs" aria-label="Sections">'+NAV.map(function(n){return '<a href="'+n[0]+'.html"'+(n[0]===page||(page==='technicals'&&n[0]==='questions')?' aria-current="page"':'')+'>'+n[1]+'</a>';}).join('')+'</nav>'+
     '<div class="who"><span id="who" class="who"></span><button class="langbtn" id="langBtn" title="'+L('Auf Deutsch umschalten','Switch to English')+'">'+L('DE','EN')+'</button></div></div>';
   document.body.insertBefore(h,document.body.firstChild);
+  var cur=h.querySelector('nav.tabs [aria-current]');if(cur){var nv=h.querySelector('nav.tabs');nv.scrollLeft=Math.max(0,cur.offsetLeft-nv.clientWidth/2+cur.offsetWidth/2);}
   /* Work-in-progress notice: shown until dismissed (remembered per browser). */
   var wipOk=false;try{wipOk=localStorage.getItem('dd-wip-ok')==='1';}catch(e){}
   if(!wipOk){var w=document.createElement('div');w.className='wip';w.setAttribute('role','note');
-    w.innerHTML='<div class="in"><span><b>'+L('Beta · work in progress.','Beta · noch im Aufbau.')+'</b> '+
+    w.innerHTML='<div class="in"><span><b>'+L('Beta · work in progress.','Beta · noch im Aufbau.')+'</b> <span class="wipshort">'+L('Built by students, not M&amp;A professionals. No guarantee that content is correct; please report errors.','Von Studierenden gebaut, nicht von M&amp;A-Profis. Keine Gewähr für die Richtigkeit; Fehler bitte melden.')+'</span><span class="wiplong">'+
       L('Deal Drills is built by students for interview practice, not by M&amp;A professionals. Content is checked with care but may contain mistakes, so there is no guarantee that it is correct and it is not professional advice. Found an error? Please tell us.',
-        'Deal Drills wird von Studierenden für die Interviewvorbereitung gebaut, nicht von M&amp;A-Profis. Die Inhalte werden sorgfältig erstellt, können aber Fehler enthalten. Für ihre Richtigkeit gibt es daher keine Gewähr, und sie sind keine fachliche Beratung. Du hast einen Fehler gefunden? Sag uns gern Bescheid.')+
+        'Deal Drills wird von Studierenden für die Interviewvorbereitung gebaut, nicht von M&amp;A-Profis. Die Inhalte werden sorgfältig erstellt, können aber Fehler enthalten. Für ihre Richtigkeit gibt es daher keine Gewähr, und sie sind keine fachliche Beratung. Du hast einen Fehler gefunden? Sag uns gern Bescheid.')+'</span>'+
       '</span><span class="wipbtns"><button class="btn small ghost" id="wipReport">'+L('Report an error','Fehler melden')+'</button><button class="btn small" id="wipOk">'+L('Got it','Verstanden')+'</button></span></div>';
     h.insertAdjacentElement('afterend',w);
     $('#wipOk').onclick=function(){try{localStorage.setItem('dd-wip-ok','1');}catch(e){}w.remove();};
@@ -195,7 +196,7 @@ var FB_KINDS=[['bug','🐞',L('Report a bug','Fehler melden'),L('Something is wr
 function renderFeedback(){
   if(!DD.sb||$('#fbBtn'))return;
   var b=document.createElement('button');b.id='fbBtn';b.className='fbbtn';b.type='button';
-  b.innerHTML='<span aria-hidden="true">💬</span> '+L('Feedback','Feedback');
+  b.innerHTML='<span aria-hidden="true">💬</span><span class="fbtxt"> '+L('Feedback','Feedback')+'</span>';b.setAttribute('aria-label','Feedback');
   document.body.appendChild(b);
   var d=document.createElement('dialog');d.id='fbDlg';d.className='fbdlg';d.setAttribute('aria-labelledby','fbTitle');
   document.body.appendChild(d);

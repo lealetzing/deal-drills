@@ -514,3 +514,32 @@ button.warn{color:var(--bad);font-weight:700} .btn.warn{background:var(--bad);bo
 .wip{background:var(--warn-soft);border-bottom:1px solid var(--line);font-size:14px}
 .wip .in{display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:10px 16px;max-width:1100px;margin:0 auto}
 .wipbtns{display:flex;gap:8px;flex-shrink:0}
+/* ---------- Phone layout ---------- */
+.wipshort{display:none}
+svg{max-width:100%;height:auto}
+@media (max-width:640px){
+  nav.tabs{-webkit-mask-image:linear-gradient(90deg,#000 85%,transparent);mask-image:linear-gradient(90deg,#000 85%,transparent);scrollbar-width:none}
+  nav.tabs::-webkit-scrollbar{display:none}
+  .wip{font-size:13px}.wip .in{padding:8px 16px;gap:8px}.wipshort{display:inline}.wiplong{display:none}
+  .wipbtns .btn{padding:6px 10px}
+  .fbbtn .fbtxt{display:none}.fbbtn{padding:10px 12px;border-radius:50%}
+  .sumgrid{grid-template-columns:repeat(3,1fr)!important;gap:8px}
+  .sumgrid .stat{padding:10px 12px}.sumgrid .stat b{font-size:22px}.sumgrid .stat span{font-size:12px}
+  /* firm directory as cards */
+  table.firmtbl thead{display:none}
+  table.firmtbl,table.firmtbl tbody{display:block;width:100%}
+  table.firmtbl tr{display:grid;grid-template-columns:1fr auto;gap:2px 10px;padding:10px 12px;border-bottom:1px solid var(--line)}
+  table.firmtbl td{display:block;padding:0;border:0}
+  table.firmtbl td:nth-child(1){grid-column:1}
+  table.firmtbl td:nth-child(2),table.firmtbl td:nth-child(3){grid-column:1;font-size:13px;color:var(--soft)}
+  table.firmtbl td:nth-child(4){grid-column:1;font-size:13px}
+  table.firmtbl td:nth-child(5){grid-column:2;grid-row:1/span 4;align-self:center}
+  .tw{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  h1{font-size:34px}
+  .term{padding-left:0;padding-right:0}
+}
+@media (max-width:640px){
+  .chips.scrollx{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,#000 88%,transparent);mask-image:linear-gradient(90deg,#000 88%,transparent);padding-bottom:2px}
+  .chips.scrollx::-webkit-scrollbar{display:none}.chips.scrollx .chip{flex-shrink:0}
+  .lead{font-size:17px}
+}
