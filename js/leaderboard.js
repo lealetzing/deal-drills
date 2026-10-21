@@ -44,6 +44,7 @@ function render(){
    (LB.b==='books'?'<div class="row" style="margin-top:12px"><div class="chips">'+['easy','medium','hard'].map(function(l){return '<button class="chip" data-lv="'+l+'" aria-pressed="'+(BK.lv===l)+'">'+LEDGER_LEVEL_NAMES[l]+'</button>';}).join('')+'</div>'+
      '<label class="muted" for="tsel">Test</label><select id="tsel">'+Array.apply(null,{length:20}).map(function(_,i){return i+1;}).map(function(n){return '<option'+(n===BK.t?' selected':'')+'>'+n+'</option>';}).join('')+'</select></div>':'')+
    '<div id="me" style="margin-top:16px"></div><div class="panel tw" id="tbl" style="margin-top:12px"><p class="muted">'+L('Loading…','Lädt…')+'</p></div>';
+  var ac=$('.chips.scrollx [aria-pressed="true"]');if(ac)ac.parentNode.scrollLeft=Math.max(0,ac.offsetLeft-ac.parentNode.offsetLeft-16);
   $$('[data-b]',V).forEach(function(b){b.onclick=function(){LB.b=b.dataset.b;sync();render();};});
   $$('[data-s]',V).forEach(function(b){b.onclick=function(){LB.scope=b.dataset.s;sync();render();};});
   $$('[data-lv]',V).forEach(function(b){b.onclick=function(){BK.lv=b.dataset.lv;sync();render();};});
