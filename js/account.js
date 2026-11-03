@@ -29,12 +29,16 @@ function authError(e){var m=(e&&e.message)||String(e);
   if(/password/i.test(m)&&/(short|least|weak)/i.test(m))return L('That password is too weak. Use at least 8 characters.','Das Passwort ist zu schwach. Verwende mindestens 8 Zeichen.');
   return m;}
 var UHINT=L('3–20 characters: lowercase letters, numbers, . _ -. Shown on leaderboards.','3–20 Zeichen: Kleinbuchstaben, Zahlen, . _ -. Erscheint in Ranglisten.');
+// Where to go after signing in: the page the gate sent the user away from. Same-site paths only.
+function nextUrl(){var n=qs('next')||'';return /^\/(?![\/\\])[^\\]*$/.test(n)?n:'';}
 function renderLogin(mode){
   if(!DD.sb)return notConfigured();
+  if(DD.user&&nextUrl()){location.replace(nextUrl());return;}
   if(DD.user){V.innerHTML='<div class="form"><div class="eyebrow">'+L('Account','Konto')+'</div><h2 style="margin:8px 0 12px">'+L('You are signed in.','Du bist angemeldet.')+'</h2><p>'+esc(DD.profile&&DD.profile.display_name||'')+'</p><div class="row"><a class="btn" href="profile.html">'+L('Your profile','Dein Profil')+'</a><a class="btn ghost" href="games.html">'+L('Play','Spielen')+'</a></div></div>';return;}
   mode=mode||(location.hash==='#signup'?'signup':'signin');
   var su=mode==='signup';
-  V.innerHTML='<div class="form"><div class="eyebrow">'+(su?L('Create an account','Konto erstellen'):L('Welcome back','Willkommen zurück'))+'</div><h2 style="margin:8px 0 6px">'+(su?L('Save your progress, join the leaderboard.','Fortschritt speichern, in die Rangliste kommen.'):L('Sign in','Anmelden'))+'</h2>'+
+  V.innerHTML='<div class="form"><div class="eyebrow">'+(su?L('Create an account','Konto erstellen'):L('Welcome back','Willkommen zurück'))+'</div><h2 style="margin:8px 0 6px">'+(su?L('Create your free account to start practising.','Erstelle dein kostenloses Konto und leg los.'):L('Sign in','Anmelden'))+'</h2>'+
+   (nextUrl()?'<p class="muted" style="margin:0">'+L('You need a free account to use Deal Drills. A username and password are all it takes.','Für Deal Drills brauchst du ein kostenloses Konto. Benutzername und Passwort reichen.')+'</p>':'')+
    '<div class="chips" style="margin:14px 0 18px"><button class="chip" data-mode="signin" aria-pressed="'+!su+'">'+L('Sign in','Anmelden')+'</button><button class="chip" data-mode="signup" aria-pressed="'+su+'">'+L('Create account','Konto erstellen')+'</button></div>'+
    '<form id="af" novalidate>'+
    (su?'<div class="field"><label for="un">'+L('Username','Benutzername')+'</label><input type="text" id="un" autocomplete="username" autocapitalize="none" spellcheck="false" maxlength="20" required placeholder="'+L('e.g. ib_possible','z. B. ib_possible')+'"><span class="muted" id="unmsg">'+UHINT+'</span></div>'
@@ -65,7 +69,7 @@ function renderLogin(mode){
           b.disabled=false;
           if(res.error){msg(authError(res.error));return;}
           if(!res.data.session){msg(L('Account created, but it still needs email confirmation. (Site owner: switch off “Confirm email” in Supabase.)','Konto erstellt, aber die E-Mail muss noch bestätigt werden. (Betreiberin: „Confirm email“ in Supabase ausschalten.)'));return;}
-          var go=function(){location.href='profile.html';};
+          var go=function(){location.href=nextUrl()||'profile.html';};
           if(em)DD.sb.from('recovery_emails').upsert({user_id:res.data.user.id,email:em,updated_at:new Date().toISOString()}).then(go,go);else go();
         });
       });
@@ -74,7 +78,7 @@ function renderLogin(mode){
       DD.sb.auth.signInWithPassword({email:authEmail(id),password:pw}).then(function(res){
         b.disabled=false;
         if(res.error){msg(authError(res.error));return;}
-        location.href='profile.html';
+        location.href=nextUrl()||'profile.html';
       });
     }
   };

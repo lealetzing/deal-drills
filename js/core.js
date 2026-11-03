@@ -102,6 +102,16 @@ if(DD.configured()){
   try{DD.sb=window.supabase.createClient(DD.cfg.SUPABASE_URL,DD.cfg.SUPABASE_ANON_KEY,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}});}
   catch(e){console.error('Supabase init failed',e);DD.sb=null;}
 }
+/* Account gate: only the landing page, login and legal pages are open. The first check uses the stored session so
+   guests never see a gated page; DD.ready repeats it with the real session. Copies without Supabase keys stay open. */
+var PUBLIC_PAGES={index:1,login:1,about:1};
+function gated(){return !!DD.sb&&!PUBLIC_PAGES[document.body.getAttribute('data-page')||''];}
+function goLogin(){document.documentElement.style.visibility='hidden';
+  location.replace('login.html?next='+encodeURIComponent(location.pathname+location.search+location.hash)+'#signup');}
+DD.maybeSignedIn=(function(){if(!DD.sb)return false;
+  try{return !!localStorage.getItem('sb-'+new URL(DD.cfg.SUPABASE_URL).hostname.split('.')[0]+'-auth-token');}catch(e){return true;}})();
+// A password reset link arrives with its session in the URL, so it counts as signed in until DD.ready knows better.
+if(gated()&&!DD.maybeSignedIn&&!/access_token=|type=recovery/.test(location.hash)&&!qs('code'))goLogin();
 function loadProfile(){
   if(!DD.sb||!DD.user){DD.profile=null;return Promise.resolve();}
   return DD.sb.from('profiles').select('id,username,display_name,university,target_role').eq('id',DD.user.id).maybeSingle()
@@ -116,6 +126,7 @@ function setUser(u){
   if(!changed)return Promise.resolve();
   if(!DD.user){
     DD.profile=null;
+    if(gated()&&!DD.leaving){goLogin();return Promise.resolve();}
     renderWho();emit('auth');return Promise.resolve();}
   return loadProfile().then(function(){renderWho();emit('auth');return pullProgress();});
 }
@@ -123,13 +134,17 @@ DD.ready=new Promise(function(resolve){
   if(!DD.sb){resolve();return;}
   DD.sb.auth.getSession().then(function(res){
     var s=res&&res.data&&res.data.session;return setUser(s?s.user:null);
-  }).catch(function(){}).then(resolve);
+  }).catch(function(){}).then(function(){
+    DD.maybeSignedIn=false;
+    if(gated()&&!DD.user)goLogin();
+    resolve();
+  });
   // Supabase advises not to await other client calls inside this callback, so defer the work.
   DD.sb.auth.onAuthStateChange(function(event,session){setTimeout(function(){setUser(session?session.user:null);},0);});
 });
 DD.signOut=function(){
   if(!DD.sb)return Promise.resolve();
-  clearTimeout(SYNC.timer);
+  clearTimeout(SYNC.timer);DD.leaving=true;
   return DD.sb.auth.signOut().then(function(){
     // Shared computers: do not leave the previous user's progress behind.
     S=defState();try{localStorage.removeItem(LK);}catch(e){}
