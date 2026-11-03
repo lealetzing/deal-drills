@@ -9,7 +9,7 @@ if(dataDir)dataDir.forEach(function(x){if(/\.js$/.test(x.js))files.push('data/'+
 var out=[];
 files.forEach(function(fn){try{new Function(read(root+'/js/'+fn));out.push('syntax ok  '+fn);}catch(e){throw 'SYNTAX '+fn+': '+e;}});
 var helpers=read(root+'/js/core.js').split('/* ---------- local state')[0];
-var src=helpers+'\n'+read(root+'/js/qbank.js')+'\n'+read(root+'/js/gen.js')+'\n'+read(root+'/js/ledger.js')+'\n'+read(root+'/js/data/gamebank.js')+'\nreturn {BANKS:{market:MARKET_BANK,excel:EXCEL_BANK,updown:UPDOWN_BANK,mult:MULT_BANK},mentalCard:mentalCard,GEN:GEN,setLv:function(v){GEN_LV=v;},QB:QB,CATS:CATS,parseNum:parseNum,LEDGER:LEDGER,LEDGER_LEVELS:LEDGER_LEVELS,ledgerQuestion:ledgerQuestion,testCards:testCards,LEDGER_TESTS:LEDGER_TESTS,TRAPS:TRAPS,claimTrue:claimTrue,claimText:claimText};';
+var src=helpers+'\n'+read(root+'/js/qbank.js')+'\n'+read(root+'/js/gen.js')+'\n'+read(root+'/js/ledger.js')+'\n'+read(root+'/js/data/gamebank.js')+'\nreturn {QB_DE:QB_DE,BANKS:{market:MARKET_BANK,excel:EXCEL_BANK,updown:UPDOWN_BANK,mult:MULT_BANK},mentalCard:mentalCard,GEN:GEN,setLv:function(v){GEN_LV=v;},QB:QB,CATS:CATS,parseNum:parseNum,LEDGER:LEDGER,LEDGER_LEVELS:LEDGER_LEVELS,ledgerQuestion:ledgerQuestion,testCards:testCards,LEDGER_TESTS:LEDGER_TESTS,TRAPS:TRAPS,claimTrue:claimTrue,claimText:claimText};';
 var o=new Function('document','window','localStorage',src)({},{},{});
 var rng={};
 ['easy','medium','hard'].forEach(function(lv){o.setLv(lv);for(var k in o.GEN){for(var i=0;i<300;i++){var q=o.GEN[k].f();if(!isFinite(q.a)||!q.q||!q.s||/NaN|undefined|Infinity/.test(q.q+q.s))throw 'BAD '+lv+' '+k+' '+JSON.stringify(q);
@@ -44,6 +44,8 @@ out.push('traps all false ('+trapsChecked+' checked) · mix '+JSON.stringify(qs)
 out.push('fixed tests deterministic: 3 levels × '+o.LEDGER_TESTS);
 out.push('levels ok: '+Object.keys(o.LEDGER_LEVELS).map(function(k){return k+' '+o.LEDGER_LEVELS[k].keys.length;}).join(', '));
 o.QB.forEach(function(q){if(q.length!==5||!o.CATS[q[1]]||'ba'.indexOf(q[2])<0)throw 'BAD QB '+q[0];});
+o.QB.forEach(function(q){var d=o.QB_DE[q[0]];if(!d||d.length!==2||!d[0]||!d[1])throw 'MISSING QB_DE '+q[0];});
+if(Object.keys(o.QB_DE).length!==o.QB.length)throw 'QB_DE count';
 out.push(o.QB.length+' questions ok');
 out.push('parseNum '+JSON.stringify([o.parseNum('1,25'),o.parseNum('1,250'),o.parseNum('-7,5'),o.parseNum('12%')]));
 out.join('\n');

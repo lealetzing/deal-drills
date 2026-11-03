@@ -1,5 +1,5 @@
-/* Technical interview questions by topic (js/qbank.js). Model answers are written for this site and are in English,
-   like most technical rounds. "Known" marks live in S.games.qk so the flashcard mode can skip them. */
+/* Technical interview questions by topic (js/qbank.js). Model answers are written for this site, in English and German.
+   "Known" marks live in S.games.qk so the flashcard mode can skip them. */
 var V=$('#view');
 var TCAT_TOPIC={acc:'m1',ev:'m2',val:'m3',dcf:'m4',mm:'m6',pay:'m7',proc:'m8',law:'m9',lbo:'m10'};
 var TCAT_ORDER=['acc','ev','val','dcf','mm','pay','proc','law','lbo'];
@@ -12,7 +12,7 @@ function ans(t){return esc(t).replace(/\n/g,'<br>');}
 function trender(){
   var qs_=tlist(),kn=known(),nk=qs_.filter(function(q){return kn[q[0]];}).length;
   V.innerHTML='<div class="eyebrow">Interview</div><h2 style="margin:8px 0 6px">'+L('Technical questions by topic','Technische Fragen nach Thema')+'</h2>'+
-   '<p class="lead" style="margin-top:0">'+L('Answer out loud first, then open the model answer.','Erst laut antworten, dann die Musterantwort aufklappen.')+(LANG==='de'?' <span class="muted">Fragen und Antworten sind auf Englisch, wie in den meisten Technical-Runden.</span>':'')+'</p>'+
+   '<p class="lead" style="margin-top:0">'+L('Answer out loud first, then open the model answer.','Erst laut antworten, dann die Musterantwort aufklappen.')+'</p>'+
    '<div class="chips" style="margin-top:14px">'+[['all',L('All topics','Alle Themen')]].concat(TCAT_ORDER.map(function(k){return [k,CATS[k]];})).map(function(c){var n=QB.filter(function(q){return c[0]==='all'||q[1]===c[0];}).length;return '<button class="chip" data-c="'+c[0]+'" aria-pressed="'+(TQ.cat===c[0])+'">'+esc(c[1])+' <span class="muted">'+n+'</span></button>';}).join('')+'</div>'+
    '<div class="row" style="margin-top:10px;gap:10px"><div class="chips">'+[['all',L('All levels','Alle Stufen')],['b',lvName('b')],['a',lvName('a')]].map(function(l){return '<button class="chip" data-l="'+l[0]+'" aria-pressed="'+(TQ.lv===l[0])+'">'+l[1]+'</button>';}).join('')+'</div>'+
    '<span class="muted">'+qs_.length+' '+L('questions','Fragen')+' · '+nk+' '+L('known','gewusst')+'</span>'+

@@ -8,6 +8,10 @@ var IV={q:'',g:'all',onlyWith:false,open:qs('f')||null,counts:{}};
 var BY_SLUG={};FIRMS.forEach(function(x){BY_SLUG[x.s]=x;});
 function city(c){return LANG==='de'&&CITY_DE[c]?CITY_DE[c]:c;}
 function fold(s){return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9]+/g,' ').trim();}
+// Stored translation for the site language if there is one (columns from SQL 016), otherwise the original post
+function postText(p){return (LANG==='de'?p.question_de:p.question_en)||p.question;}
+function translateLink(p){if(LANG==='de'?p.question_de:p.question_en)return '';
+  return ' <a class="ilink" target="_blank" rel="noopener" href="https://translate.google.com/?sl=auto&tl='+LANG+'&op=translate&text='+encodeURIComponent(p.question)+'">'+L('Translate','Übersetzen')+' ↗</a>';}
 function label(list,k){var x=list.filter(function(p){return p[0]===k;})[0];return x?x[1]:'';}
 function errMsg(m){
   if(/Too many/.test(m))return L('Too many posts. Please try again later.','Zu viele Beiträge. Bitte versuch es später erneut.');
@@ -74,7 +78,7 @@ function loadFirm(slug){
 }
 function postItem(p){
   var meta=[label(ROUNDS,p.round),label(PROGS,p.programme),p.year||''].filter(Boolean);
-  return '<li class="ipostitem" data-id="'+p.id+'"><p class="iqtext">'+esc(p.question)+'</p>'+
+  return '<li class="ipostitem" data-id="'+p.id+'"><p class="iqtext">'+esc(postText(p))+translateLink(p)+'</p>'+
    '<div class="row imeta">'+meta.map(function(m){return '<span class="pill b">'+esc(m)+'</span>';}).join('')+
    '<span class="muted">'+(p.author?esc(p.author):L('Anonymous','Anonym'))+' · '+new Date(p.created_at).toLocaleDateString(LANG==='de'?'de-DE':'en-GB')+'</span>'+
    '<span class="iacts"><button class="ivote'+(p.voted?' on':'')+'" data-vote="'+p.id+'" aria-pressed="'+!!p.voted+'" title="'+L('I was asked this too','Wurde ich auch gefragt')+'">👍 <span>'+p.votes+'</span> <small>'+L('asked too','auch gefragt')+'</small></button>'+
@@ -146,7 +150,7 @@ function drawCard(){
   var done=PR.total-PR.deck.filter(function(x){return !PR.seen[x.id];}).length;
   V.innerHTML='<div class="row" style="justify-content:space-between;margin-bottom:8px"><span class="mono muted">'+L('Practise by firm','Nach Firma üben')+'</span><span class="mono muted">'+PR.known+' ✓ · '+PR.deck.length+' '+L('left','übrig')+'</span><button class="btn ghost small" id="prQuit">'+L('Stop','Beenden')+'</button></div>'+
     '<div class="bar2" style="margin-bottom:14px"><i style="width:'+Math.round(100*PR.known/PR.total)+'%"></i></div>'+
-    '<div class="panel prcard"><div class="eyebrow">'+esc(f.n)+'</div><p class="prq">'+esc(p.question)+'</p>'+
+    '<div class="panel prcard"><div class="eyebrow">'+esc(f.n)+'</div><p class="prq">'+esc(postText(p))+'</p>'+(translateLink(p)?'<p style="margin:-6px 0 10px">'+translateLink(p)+'</p>':'')+
     (meta.length?'<div class="row">'+meta.map(function(m){return '<span class="pill b">'+esc(m)+'</span>';}).join('')+'</div>':'')+
     (PR.seen[p.id]?'<p class="muted" style="margin:10px 0 0">'+L('Second look.','Zweiter Anlauf.')+'</p>':'')+
     '<p class="muted" style="margin:14px 0 0;font-size:13px">'+L('Answer out loud first. Then rate yourself.','Erst laut antworten. Dann bewerten.')+'</p>'+
